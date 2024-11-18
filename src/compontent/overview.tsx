@@ -1,7 +1,7 @@
 export default function Overview() {
   return (
     <>
-      <div className="p-5 my-2 bg-white rounded-md shadow-md">
+      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="flex items-start justify-between mb-2">
           <div>
             <p className={`flex items-center gap-1.5 font-semibold text-lg`}>
@@ -68,7 +68,9 @@ export default function Overview() {
                 </span>
               </span>
             </p>
-            <p className="py-2 text-zinc-700">Vite + React + TS</p>
+            <p className="py-2 dark:text-zinc-400 text-[#374151] dark:text-[#b3b0c6]">
+              Vite + React + TS
+            </p>
           </div>
           <p className="flex items-center gap-1 px-2 py-1 text-xs font-semibold text-white bg-red-600 rounded-full">
             <svg
@@ -167,7 +169,7 @@ export default function Overview() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_3486_55)">
+                  <g clipPath="url(#clip0_3486_55)">
                     <path
                       d="M12.2266 7.24863C14.3271 9.35129 14.2983 12.7224 12.2393 14.7928C12.2354 14.797 12.2308 14.8016 12.2266 14.8058L9.86411 17.1683C7.7804 19.252 4.39032 19.2517 2.30692 17.1683C0.223213 15.085 0.223213 11.6945 2.30692 9.61113L3.61143 8.30662C3.95737 7.96068 4.55313 8.1906 4.57099 8.67949C4.59377 9.30253 4.70549 9.92848 4.91165 10.533C4.98147 10.7376 4.93158 10.964 4.77865 11.117L4.31856 11.5771C3.33328 12.5624 3.30237 14.1667 4.27796 15.1616C5.26318 16.1663 6.88254 16.1723 7.87532 15.1795L10.2378 12.8174C11.2289 11.8263 11.2248 10.2244 10.2378 9.23742C10.1077 9.10755 9.97665 9.00665 9.87427 8.93616C9.80185 8.88643 9.74205 8.82046 9.69964 8.74351C9.65724 8.66657 9.63341 8.58077 9.63004 8.49298C9.61612 8.12149 9.74774 7.73867 10.0413 7.44512L10.7815 6.7049C10.9756 6.5108 11.2801 6.48697 11.5051 6.64405C11.7629 6.82403 12.0043 7.02633 12.2266 7.24863ZM17.1814 2.29363C15.098 0.210205 11.7079 0.209924 9.62417 2.29363L7.26167 4.65613C7.25745 4.66035 7.25288 4.66492 7.24901 4.66914C5.19005 6.73956 5.16119 10.1107 7.26167 12.2133C7.48396 12.4356 7.72537 12.6379 7.98311 12.8179C8.20818 12.9749 8.51271 12.9511 8.70677 12.757L9.44695 12.0168C9.7405 11.7232 9.87213 11.3404 9.8582 10.9689C9.85484 10.8811 9.83101 10.7953 9.7886 10.7184C9.7462 10.6415 9.6864 10.5755 9.61397 10.5258C9.5116 10.4553 9.38054 10.3544 9.25042 10.2245C8.26348 9.23756 8.25933 7.63563 9.25042 6.64454L11.6129 4.28239C12.6057 3.28961 14.225 3.29559 15.2103 4.30032C16.1859 5.29524 16.155 6.89956 15.1697 7.88485L14.7096 8.34494C14.5567 8.49787 14.5068 8.72428 14.5766 8.92896C14.7828 9.53343 14.8945 10.1594 14.9173 10.7824C14.9352 11.2713 15.5309 11.5012 15.8768 11.1553L17.1813 9.85079C19.2651 7.76746 19.2651 4.37699 17.1814 2.29363Z"
                       fill="#503BFF"
@@ -208,7 +210,9 @@ export default function Overview() {
                 </span>
               </span>
             </p>
-            <p className="py-2 text-zinc-700 ">http://localhost:5173</p>
+            <p className="py-2 dark:text-zinc-400 text-[#374151] dark:text-[#b3b0c6] ">
+              http://localhost:5173
+            </p>
           </div>
           <p className="flex items-center gap-1 px-2 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
             <svg
@@ -244,17 +248,17 @@ export default function Overview() {
                   <path
                     d="M11.97 22C17.4928 22 21.97 17.5228 21.97 12C21.97 6.47715 17.4928 2 11.97 2C6.44712 2 1.96997 6.47715 1.96997 12C1.96997 17.5228 6.44712 22 11.97 22Z"
                     stroke="#503BFF"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M12 16.23C14.3362 16.23 16.23 14.3362 16.23 12C16.23 9.66386 14.3362 7.77002 12 7.77002C9.66386 7.77002 7.77002 9.66386 7.77002 12C7.77002 14.3362 9.66386 16.23 12 16.23Z"
                     stroke="#503BFF"
-                    stroke-width="2"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </span>
@@ -285,7 +289,7 @@ export default function Overview() {
           </div>
         </div>
       </div>
-      <div className="p-5 my-2 bg-white rounded-md shadow-md">
+      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="grid grid-cols-2">
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
             <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
@@ -299,15 +303,15 @@ export default function Overview() {
                 <path
                   d="M3.47483 12.7502L7.24983 16.5252C8.79983 18.0752 11.3165 18.0752 12.8748 16.5252L16.5332 12.8668C18.0832 11.3168 18.0832 8.80016 16.5332 7.24183L12.7498 3.47516C11.9582 2.6835 10.8665 2.2585 9.74983 2.31683L5.58316 2.51683C3.9165 2.59183 2.5915 3.91683 2.50816 5.57516L2.30816 9.74183C2.25816 10.8668 2.68316 11.9585 3.47483 12.7502Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M7.91659 9.99992C9.06718 9.99992 9.99992 9.06718 9.99992 7.91659C9.99992 6.76599 9.06718 5.83325 7.91659 5.83325C6.76599 5.83325 5.83325 6.76599 5.83325 7.91659C5.83325 9.06718 6.76599 9.99992 7.91659 9.99992Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
               </svg>
             </span>
@@ -351,15 +355,15 @@ export default function Overview() {
                 <path
                   d="M3.47483 12.7502L7.24983 16.5252C8.79983 18.0752 11.3165 18.0752 12.8748 16.5252L16.5332 12.8668C18.0832 11.3168 18.0832 8.80016 16.5332 7.24183L12.7498 3.47516C11.9582 2.6835 10.8665 2.2585 9.74983 2.31683L5.58316 2.51683C3.9165 2.59183 2.5915 3.91683 2.50816 5.57516L2.30816 9.74183C2.25816 10.8668 2.68316 11.9585 3.47483 12.7502Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M7.91659 9.99992C9.06718 9.99992 9.99992 9.06718 9.99992 7.91659C9.99992 6.76599 9.06718 5.83325 7.91659 5.83325C6.76599 5.83325 5.83325 6.76599 5.83325 7.91659C5.83325 9.06718 6.76599 9.99992 7.91659 9.99992Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
               </svg>
             </span>
@@ -393,7 +397,7 @@ export default function Overview() {
           </div>
         </div>
       </div>
-      <div className="p-5 my-2 bg-white rounded-md shadow-md">
+      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="grid grid-cols-2 gap-5">
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
             <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
@@ -407,10 +411,10 @@ export default function Overview() {
                 <path
                   d="M6.15587 12.9142H9.24587V20.1142C9.24587 21.1742 10.5659 21.6742 11.2659 20.8742L18.8359 12.2742C19.4959 11.5242 18.9659 10.3542 17.9659 10.3542H14.8759V3.15425C14.8759 2.09425 13.5559 1.59425 12.8559 2.39425L5.28588 10.9942C4.63588 11.7442 5.16587 12.9142 6.15587 12.9142Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </span>
@@ -454,34 +458,34 @@ export default function Overview() {
                 <path
                   d="M21 7V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V7C3 4 4.5 2 8 2H16C19.5 2 21 4 21 7Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M14.5 4.5V6.5C14.5 7.6 15.4 8.5 16.5 8.5H18.5"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M8 13H12"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M8 17H16"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </span>
@@ -525,25 +529,25 @@ export default function Overview() {
                 <path
                   d="M21 7V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V7C3 4 4.5 2 8 2H16C19.5 2 21 4 21 7Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M14.5 4.5V6.5C14.5 7.6 15.4 8.5 16.5 8.5H18.5"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M7.48002 15.4901C7.15002 14.4601 7.53999 13.1901 8.60999 12.8401C9.17999 12.6601 9.87999 12.8101 10.27 13.3601C10.64 12.7901 11.37 12.6601 11.93 12.8401C13.01 13.1901 13.39 14.4601 13.07 15.4901C12.56 17.1201 10.77 17.9701 10.27 17.9701C9.77999 17.9601 8.01002 17.1301 7.48002 15.4901Z"
                   stroke="#503BFF"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </span>
@@ -587,44 +591,44 @@ export default function Overview() {
                 <path
                   d="M19.0599 18.6698L15.216 11L11.3721 18.6698"
                   stroke="#503BFF"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M12.0723 17.3047H18.395"
                   stroke="#503BFF"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M12.0935 5.38647H4.01978"
                   stroke="#503BFF"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M8.03711 4V5.38654"
                   stroke="#503BFF"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M10.0653 5.36621C10.0653 8.93454 7.34087 11.83 4 11.83"
                   stroke="#503BFF"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M12.0935 11.83C10.6418 11.83 9.32931 11.0347 8.41455 9.77051"
                   stroke="#503BFF"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </span>
@@ -658,7 +662,7 @@ export default function Overview() {
           </div>
         </div>
       </div>
-      <div className="p-5 my-2 bg-white rounded-md shadow-md">
+      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="flex gap-6 pb-2 border-b border-black/5">
           <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
             <svg
@@ -671,20 +675,20 @@ export default function Overview() {
               <path
                 d="M10.5 7H22"
                 stroke="#503BFF"
-                stroke-width="1.5"
-                stroke-linecap="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
               />
               <path
                 d="M10.5 12H22"
                 stroke="#503BFF"
-                stroke-width="1.5"
-                stroke-linecap="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
               />
               <path
                 d="M1.5 17H22"
                 stroke="#503BFF"
-                stroke-width="1.5"
-                stroke-linecap="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
               />
               <rect
                 x="1.75"
@@ -693,7 +697,7 @@ export default function Overview() {
                 height="8.5"
                 rx="1.25"
                 stroke="#503BFF"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
             </svg>
           </span>

@@ -9,12 +9,12 @@ import Social from "./compontent/social";
 import Advance from "./compontent/advanced";
 
 function App() {
-  const [activeTab, setActiveTab] = useState(7);
+  const [activeTab, setActiveTab] = useState(1);
   const [dropdown,setDropdown] = useState(false)
   return (
     <>
-      <div className="w-[680px] h-[956.75px] bg-slate-200 p-4 relative">
-        <div className="rounded-md bg-[#1b1a3b] p-5">
+      <div className="w-[680px] h-[956.75px] bg-slate-200 dark:bg-[#141414] p-4 relative text-black dark:text-[#cbd5e1]">
+        <div className="rounded-md bg-[#1b1a3b] dark:bg-[#1d1d1d] p-5">
           <ul className="flex justify-between gap-2 text-sm font-semibold">
             <li>
               <button
@@ -344,7 +344,7 @@ function App() {
         {activeTab === 5 ? <Schema /> : <></>}
         {activeTab === 6 ? <Social /> : <></>}
         {activeTab === 7 ? <Advance /> : <></>}
-       {dropdown? <div className="bg-white border rounded-md border-[#9ca3af] absolute p-4 w-[320px] top-5 left-0 right-0 mx-auto">
+       {dropdown? <div className="bg-white dark:bg-[#1d1d1d] border rounded-md border-[#9ca3af] dark:border-white/20 absolute p-4 w-[320px] top-5 left-0 right-0 mx-auto">
           <svg
             onClick={() => {
               setDropdown(false);
