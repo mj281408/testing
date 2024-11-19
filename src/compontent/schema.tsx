@@ -4,7 +4,7 @@ export default function Schema() {
   const [schema, setSchema] = useState(1);
   return (
     <>
-      <div className="relative p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
+      <div className="relative p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="flex items-center justify-between gap-4 my-3 text-sm font-semibold">
           <ul className="flex gap-2">
             <li>
@@ -14,7 +14,7 @@ export default function Schema() {
                 }}
                 className={`border-b-2 ${
                   schema === 1
-                    ? "text-[#7c74ff] border-[#7c74ff]"
+                    ? "text-orange-500 border-orange-500"
                     : "text-[#b3b0c6] border-transparent"
                 }`}
               >
@@ -28,7 +28,7 @@ export default function Schema() {
                 }}
                 className={`border-b-2 ${
                   schema === 2
-                    ? "text-[#7c74ff] border-[#7c74ff]"
+                    ? "text-orange-500 border-orange-500"
                     : "text-[#b3b0c6] border-transparent"
                 }`}
               >
@@ -36,9 +36,9 @@ export default function Schema() {
               </button>
             </li>
           </ul>
-          <button className="flex items-center gap-2 bg-zinc-300 dark:bg-[#141414]  dark:text-[#cbd5e1] rounded-md px-4 py-1.5">
+          <button className="flex items-center gap-2 bg-zinc-300 dark:bg-[#292929]  dark:text-[#cbd5e1] rounded-md px-4 py-1.5">
             <svg
-              className="fill-[#141414]  dark:fill-[#cbd5e1]"
+              className="fill-[#292929]  dark:fill-[#cbd5e1]"
               width="15"
               height="15"
               viewBox="0 0 15 15"

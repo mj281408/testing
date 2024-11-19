@@ -1,7 +1,7 @@
 export default function Advance() {
   return (
     <>
-      <div className="relative p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
+      <div className="relative p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <p className="text-sm text-zinc-400">
           The links below take you to each service for the current website
           you're on e.g. if you're on Google, clicking SimilarWeb will take you
@@ -99,7 +99,7 @@ export default function Advance() {
               />
               <span>Whois</span>
             </p>
-            <p className="text-xl font-bold text-[#7c74ff] mt-5">Tools</p>
+            <p className="text-xl font-bold text-orange-500 mt-5">Tools</p>
             <p className="pt-2 text-sm font-semibold dark:text-zinc-400 text-[#374151]">
               Perform an -inurl:https search Perform a site:domain.com search
               Highlight Nofollow links
@@ -109,7 +109,7 @@ export default function Advance() {
             <p className="text-md font-semibold text-[#646464] dark:text-zinc-300 mb-2">
               Change User Agent
             </p>
-            <select className="w-full bg-[#f4f3ff] dark:bg-[#334155]  rounded-md py-2 px-4 outline-none border border-[#7c74ff] text-xs">
+            <select className="w-full bg-[#f4f3ff] dark:bg-[#334155]  rounded-md py-2 px-4 outline-none border border-orange-500 text-xs">
               <option>Default</option>
               <option>Googlebot</option>
               <option>Internet Exploerer 8</option>
@@ -128,7 +128,7 @@ export default function Advance() {
             <p className="text-md font-semibold text-[#646464] dark:text-zinc-300 mb-2 mt-7">
               Dark Mode
             </p>
-            <p className="bg-[#f4f3ff] dark:bg-[#334155] text-[#7c74ff] text-xs p-4 rounded-md">
+            <p className="bg-[#f4f3ff] dark:bg-[#334155] text-orange-500 text-xs p-4 rounded-md">
               <span className="font-semibold">Did you know?</span> Anywhere on
               the web, if you Right Click you'll see a custom menu item just for
               this extension.

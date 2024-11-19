@@ -1,31 +1,31 @@
 export default function Links() {
   return (
     <>
-      <div className="relative p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
+      <div className="relative p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="flex justify-center gap-7 ">
           <div className="flex flex-col items-center">
-            <span className="text-xl font-bold text-[#7c74ff]">
+            <span className="text-xl font-bold text-orange-500">
               Total Links
             </span>
             <span className="text-xl font-semibold text-zinc-400">0</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xl font-bold text-[#7c74ff]">Unique</span>
+            <span className="text-xl font-bold text-orange-500">Unique</span>
             <span className="text-xl font-semibold text-zinc-400">0</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xl font-bold text-[#7c74ff]">Internal</span>
+            <span className="text-xl font-bold text-orange-500">Internal</span>
             <span className="text-xl font-semibold text-zinc-400">0</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xl font-bold text-[#7c74ff]">External</span>
+            <span className="text-xl font-bold text-orange-500">External</span>
             <span className="text-xl font-semibold text-zinc-400">0</span>
           </div>
         </div>
-        <div className="flex items-center my-3 text-sm justify-center *:bg-zinc-300 *:dark:bg-[#141414]  *:dark:text-[#cbd5e1] *:rounded-md *:px-4 *:py-1.5 font-semibold gap-4">
+        <div className="flex items-center my-3 text-sm justify-center *:bg-zinc-300 *:dark:bg-[#292929]  *:dark:text-[#cbd5e1] *:rounded-md *:px-4 *:py-1.5 font-semibold gap-4">
           <button className="flex items-center gap-2">
             <svg
-              className="fill-[#141414]  dark:fill-[#cbd5e1]"
+              className="fill-[#292929]  dark:fill-[#cbd5e1]"
               width="15"
               height="15"
               viewBox="0 0 15 15"
@@ -48,7 +48,7 @@ export default function Links() {
           </button>
           <button className="flex items-center gap-2">
             <svg
-              className="fill-[#141414]  dark:fill-[#cbd5e1]"
+              className="fill-[#292929]  dark:fill-[#cbd5e1]"
               width="15"
               height="15"
               viewBox="0 0 15 15"
@@ -70,7 +70,7 @@ export default function Links() {
             <span>Export Complete Links</span>
           </button>
         </div>
-        <p className="text-xl font-bold text-[#7c74ff] mt-3">Internal Links</p>
+        <p className="mt-3 text-xl font-bold text-orange-500">Internal Links</p>
         <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5">
           <p>
             https://tailwindcss.com/blog/2024-05-24-catalyst-application-layouts
@@ -93,7 +93,7 @@ export default function Links() {
             </span>
           </p>
         </div>
-        <p className="text-xl font-bold text-[#7c74ff] mt-3">External Links</p>
+        <p className="mt-3 text-xl font-bold text-orange-500">External Links</p>
         <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5">
           <p>
             https://tailwindcss.com/blog/2024-05-24-catalyst-application-layouts

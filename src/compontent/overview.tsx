@@ -1,50 +1,10 @@
-export default function Overview({onEditClick ,onEditClick2 }) {
+export default function Overview({ onEditClick, onEditClick2 }) {
   return (
     <>
-      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
+      <div className="p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="flex items-start justify-between mb-2">
           <div>
-            <p className={`flex items-center gap-1.5 font-semibold text-lg`}>
-              <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clipPath="url(#clip0_3481_13)">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M19.24 11.24C20.3658 10.1142 20.9983 8.58722 20.9983 6.99504C20.9983 5.40285 20.3658 3.87588 19.24 2.75004C18.1142 1.62419 16.5872 0.991699 14.995 0.991699C13.4028 0.991699 11.8758 1.62419 10.75 2.75004L4 9.50004V18H12.5L19.24 11.24Z"
-                      stroke="#503BFF"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M15 7L1 21"
-                      stroke="#503BFF"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M16 14H8"
-                      stroke="#503BFF"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_3481_13">
-                      <rect width="22" height="22" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </span>
+            <p className={`flex items-center gap-1.5 font-semibold text-lg`}>             
               <span>Title</span>
               <span className="relative block cursor-pointer group">
                 <svg
@@ -67,26 +27,28 @@ export default function Overview({onEditClick ,onEditClick2 }) {
                   more, here.
                 </span>
               </span>
-              <button onClick={onEditClick}><svg
-                width="15"
-                className="fill-[#141414] dark:fill-[#cbd5e1]"
-                height="15"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clipPath="url(#clip0_3523_2)">
-                  <path
-                    d="M19.4483 5.55078L17.6475 7.35156C17.4639 7.53516 17.167 7.53516 16.9834 7.35156L12.6475 3.01562C12.4639 2.83203 12.4639 2.53516 12.6475 2.35156L14.4483 0.550781C15.1788 -0.179688 16.3663 -0.179688 17.1006 0.550781L19.4483 2.89844C20.1827 3.62891 20.1827 4.81641 19.4483 5.55078ZM11.1006 3.89844L0.842824 14.1562L0.0146994 18.9023C-0.0985818 19.543 0.460012 20.0977 1.10064 19.9883L5.84673 19.1562L16.1045 8.89844C16.2881 8.71484 16.2881 8.41797 16.1045 8.23438L11.7686 3.89844C11.5811 3.71484 11.2842 3.71484 11.1006 3.89844ZM4.84673 13.2773C4.63189 13.0625 4.63189 12.7187 4.84673 12.5039L10.8624 6.48828C11.0772 6.27344 11.4209 6.27344 11.6358 6.48828C11.8506 6.70313 11.8506 7.04687 11.6358 7.26172L5.62017 13.2773C5.40532 13.4922 5.06157 13.4922 4.84673 13.2773ZM3.43657 16.5625H5.31157V17.9805L2.79204 18.4219L1.5772 17.207L2.01861 14.6875H3.43657V16.5625Z"
-                    fill="inherit"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_3523_2">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg></button>
+              <button onClick={onEditClick}>
+                <svg
+                  width="15"
+                  className="fill-[#292929] dark:fill-[#cbd5e1]"
+                  height="15"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_3523_2)">
+                    <path
+                      d="M19.4483 5.55078L17.6475 7.35156C17.4639 7.53516 17.167 7.53516 16.9834 7.35156L12.6475 3.01562C12.4639 2.83203 12.4639 2.53516 12.6475 2.35156L14.4483 0.550781C15.1788 -0.179688 16.3663 -0.179688 17.1006 0.550781L19.4483 2.89844C20.1827 3.62891 20.1827 4.81641 19.4483 5.55078ZM11.1006 3.89844L0.842824 14.1562L0.0146994 18.9023C-0.0985818 19.543 0.460012 20.0977 1.10064 19.9883L5.84673 19.1562L16.1045 8.89844C16.2881 8.71484 16.2881 8.41797 16.1045 8.23438L11.7686 3.89844C11.5811 3.71484 11.2842 3.71484 11.1006 3.89844ZM4.84673 13.2773C4.63189 13.0625 4.63189 12.7187 4.84673 12.5039L10.8624 6.48828C11.0772 6.27344 11.4209 6.27344 11.6358 6.48828C11.8506 6.70313 11.8506 7.04687 11.6358 7.26172L5.62017 13.2773C5.40532 13.4922 5.06157 13.4922 4.84673 13.2773ZM3.43657 16.5625H5.31157V17.9805L2.79204 18.4219L1.5772 17.207L2.01861 14.6875H3.43657V16.5625Z"
+                      fill="inherit"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_3523_2">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
             </p>
             <p className="py-2 dark:text-zinc-400 text-[#374151] ">
               Vite + React + TS
@@ -115,24 +77,6 @@ export default function Overview({onEditClick ,onEditClick2 }) {
         <div className="flex items-start justify-between mb-2">
           <div>
             <p className={`flex items-center gap-1.5 font-semibold text-lg`}>
-              <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.9545 3H4.04545C3.50297 3 2.9827 3.2155 2.5991 3.5991C2.2155 3.9827 2 4.50297 2 5.04545V11.8636C2 12.4061 2.2155 12.9264 2.5991 13.31C2.9827 13.6936 3.50297 13.9091 4.04545 13.9091H4.72727V16.6364C4.72758 16.7636 4.76347 16.8882 4.83088 16.996C4.89829 17.1039 4.99454 17.1908 5.10874 17.2468C5.22294 17.3029 5.35055 17.3258 5.47712 17.3131C5.6037 17.3005 5.7242 17.2526 5.825 17.175L10.025 13.9091H14.9545C15.497 13.9091 16.0173 13.6936 16.4009 13.31C16.7845 12.9264 17 12.4061 17 11.8636V5.04545C17 4.50297 16.7845 3.9827 16.4009 3.5991C16.0173 3.2155 15.497 3 14.9545 3ZM15.6364 11.8636C15.6364 12.0445 15.5645 12.2179 15.4367 12.3458C15.3088 12.4736 15.1354 12.5455 14.9545 12.5455H9.79318C9.64253 12.5459 9.49628 12.5963 9.37727 12.6886L6.09091 15.2727V13.2273C6.09091 13.0464 6.01907 12.873 5.89121 12.7452C5.76334 12.6173 5.58992 12.5455 5.40909 12.5455H4.04545C3.86463 12.5455 3.6912 12.4736 3.56334 12.3458C3.43547 12.2179 3.36364 12.0445 3.36364 11.8636V5.04545C3.36364 4.86463 3.43547 4.6912 3.56334 4.56334C3.6912 4.43547 3.86463 4.36364 4.04545 4.36364H14.9545C15.1354 4.36364 15.3088 4.43547 15.4367 4.56334C15.5645 4.6912 15.6364 4.86463 15.6364 5.04545V11.8636Z"
-                    fill="#503BFF"
-                  />
-                  <path
-                    d="M6.09002 7.77282H10.1809C10.3618 7.77282 10.5352 7.70098 10.663 7.57312C10.7909 7.44525 10.8627 7.27183 10.8627 7.091C10.8627 6.91017 10.7909 6.73675 10.663 6.60888C10.5352 6.48101 10.3618 6.40918 10.1809 6.40918H6.09002C5.90919 6.40918 5.73577 6.48101 5.6079 6.60888C5.48004 6.73675 5.4082 6.91017 5.4082 7.091C5.4082 7.27183 5.48004 7.44525 5.6079 7.57312C5.73577 7.70098 5.90919 7.77282 6.09002 7.77282ZM12.9082 9.13645H6.09002C5.90919 9.13645 5.73577 9.20829 5.6079 9.33615C5.48004 9.46402 5.4082 9.63744 5.4082 9.81827C5.4082 9.9991 5.48004 10.1725 5.6079 10.3004C5.73577 10.4283 5.90919 10.5001 6.09002 10.5001H12.9082C13.089 10.5001 13.2625 10.4283 13.3903 10.3004C13.5182 10.1725 13.59 9.9991 13.59 9.81827C13.59 9.63744 13.5182 9.46402 13.3903 9.33615C13.2625 9.20829 13.089 9.13645 12.9082 9.13645Z"
-                    fill="#503BFF"
-                  />
-                </svg>
-              </span>
               <span>Description</span>
               <span className="relative block cursor-pointer group">
                 <svg
@@ -156,26 +100,26 @@ export default function Overview({onEditClick ,onEditClick2 }) {
                 </span>
               </span>
               <button onClick={onEditClick2}>
-              <svg
-                width="15"
-                className="fill-[#141414] dark:fill-[#cbd5e1]"
-                height="15"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clipPath="url(#clip0_3523_2)">
-                  <path
-                    d="M19.4483 5.55078L17.6475 7.35156C17.4639 7.53516 17.167 7.53516 16.9834 7.35156L12.6475 3.01562C12.4639 2.83203 12.4639 2.53516 12.6475 2.35156L14.4483 0.550781C15.1788 -0.179688 16.3663 -0.179688 17.1006 0.550781L19.4483 2.89844C20.1827 3.62891 20.1827 4.81641 19.4483 5.55078ZM11.1006 3.89844L0.842824 14.1562L0.0146994 18.9023C-0.0985818 19.543 0.460012 20.0977 1.10064 19.9883L5.84673 19.1562L16.1045 8.89844C16.2881 8.71484 16.2881 8.41797 16.1045 8.23438L11.7686 3.89844C11.5811 3.71484 11.2842 3.71484 11.1006 3.89844ZM4.84673 13.2773C4.63189 13.0625 4.63189 12.7187 4.84673 12.5039L10.8624 6.48828C11.0772 6.27344 11.4209 6.27344 11.6358 6.48828C11.8506 6.70313 11.8506 7.04687 11.6358 7.26172L5.62017 13.2773C5.40532 13.4922 5.06157 13.4922 4.84673 13.2773ZM3.43657 16.5625H5.31157V17.9805L2.79204 18.4219L1.5772 17.207L2.01861 14.6875H3.43657V16.5625Z"
-                    fill="inherit"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_3523_2">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+                <svg
+                  width="15"
+                  className="fill-[#292929] dark:fill-[#cbd5e1]"
+                  height="15"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_3523_2)">
+                    <path
+                      d="M19.4483 5.55078L17.6475 7.35156C17.4639 7.53516 17.167 7.53516 16.9834 7.35156L12.6475 3.01562C12.4639 2.83203 12.4639 2.53516 12.6475 2.35156L14.4483 0.550781C15.1788 -0.179688 16.3663 -0.179688 17.1006 0.550781L19.4483 2.89844C20.1827 3.62891 20.1827 4.81641 19.4483 5.55078ZM11.1006 3.89844L0.842824 14.1562L0.0146994 18.9023C-0.0985818 19.543 0.460012 20.0977 1.10064 19.9883L5.84673 19.1562L16.1045 8.89844C16.2881 8.71484 16.2881 8.41797 16.1045 8.23438L11.7686 3.89844C11.5811 3.71484 11.2842 3.71484 11.1006 3.89844ZM4.84673 13.2773C4.63189 13.0625 4.63189 12.7187 4.84673 12.5039L10.8624 6.48828C11.0772 6.27344 11.4209 6.27344 11.6358 6.48828C11.8506 6.70313 11.8506 7.04687 11.6358 7.26172L5.62017 13.2773C5.40532 13.4922 5.06157 13.4922 4.84673 13.2773ZM3.43657 16.5625H5.31157V17.9805L2.79204 18.4219L1.5772 17.207L2.01861 14.6875H3.43657V16.5625Z"
+                      fill="inherit"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_3523_2">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
               </button>
             </p>
             <p className="py-2 text-red-400 ">Missing</p>
@@ -203,32 +147,6 @@ export default function Overview({onEditClick ,onEditClick2 }) {
         <div className="flex items-start justify-between mb-2">
           <div>
             <p className={`flex items-center gap-1.5 font-semibold text-lg`}>
-              <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-                <svg
-                  width="19"
-                  height="19"
-                  viewBox="0 0 19 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clipPath="url(#clip0_3486_55)">
-                    <path
-                      d="M12.2266 7.24863C14.3271 9.35129 14.2983 12.7224 12.2393 14.7928C12.2354 14.797 12.2308 14.8016 12.2266 14.8058L9.86411 17.1683C7.7804 19.252 4.39032 19.2517 2.30692 17.1683C0.223213 15.085 0.223213 11.6945 2.30692 9.61113L3.61143 8.30662C3.95737 7.96068 4.55313 8.1906 4.57099 8.67949C4.59377 9.30253 4.70549 9.92848 4.91165 10.533C4.98147 10.7376 4.93158 10.964 4.77865 11.117L4.31856 11.5771C3.33328 12.5624 3.30237 14.1667 4.27796 15.1616C5.26318 16.1663 6.88254 16.1723 7.87532 15.1795L10.2378 12.8174C11.2289 11.8263 11.2248 10.2244 10.2378 9.23742C10.1077 9.10755 9.97665 9.00665 9.87427 8.93616C9.80185 8.88643 9.74205 8.82046 9.69964 8.74351C9.65724 8.66657 9.63341 8.58077 9.63004 8.49298C9.61612 8.12149 9.74774 7.73867 10.0413 7.44512L10.7815 6.7049C10.9756 6.5108 11.2801 6.48697 11.5051 6.64405C11.7629 6.82403 12.0043 7.02633 12.2266 7.24863ZM17.1814 2.29363C15.098 0.210205 11.7079 0.209924 9.62417 2.29363L7.26167 4.65613C7.25745 4.66035 7.25288 4.66492 7.24901 4.66914C5.19005 6.73956 5.16119 10.1107 7.26167 12.2133C7.48396 12.4356 7.72537 12.6379 7.98311 12.8179C8.20818 12.9749 8.51271 12.9511 8.70677 12.757L9.44695 12.0168C9.7405 11.7232 9.87213 11.3404 9.8582 10.9689C9.85484 10.8811 9.83101 10.7953 9.7886 10.7184C9.7462 10.6415 9.6864 10.5755 9.61397 10.5258C9.5116 10.4553 9.38054 10.3544 9.25042 10.2245C8.26348 9.23756 8.25933 7.63563 9.25042 6.64454L11.6129 4.28239C12.6057 3.28961 14.225 3.29559 15.2103 4.30032C16.1859 5.29524 16.155 6.89956 15.1697 7.88485L14.7096 8.34494C14.5567 8.49787 14.5068 8.72428 14.5766 8.92896C14.7828 9.53343 14.8945 10.1594 14.9173 10.7824C14.9352 11.2713 15.5309 11.5012 15.8768 11.1553L17.1813 9.85079C19.2651 7.76746 19.2651 4.37699 17.1814 2.29363Z"
-                      fill="#503BFF"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_3486_55">
-                      <rect
-                        width="18"
-                        height="18"
-                        fill="white"
-                        transform="translate(0.744141 0.730957)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </span>
               <span>URL</span>
               <span className="relative block cursor-pointer group">
                 <svg
@@ -279,31 +197,6 @@ export default function Overview({onEditClick ,onEditClick2 }) {
         <div className="flex items-start justify-between">
           <div>
             <p className={`flex items-center gap-1.5 font-semibold text-lg`}>
-              <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.97 22C17.4928 22 21.97 17.5228 21.97 12C21.97 6.47715 17.4928 2 11.97 2C6.44712 2 1.96997 6.47715 1.96997 12C1.96997 17.5228 6.44712 22 11.97 22Z"
-                    stroke="#503BFF"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 16.23C14.3362 16.23 16.23 14.3362 16.23 12C16.23 9.66386 14.3362 7.77002 12 7.77002C9.66386 7.77002 7.77002 9.66386 7.77002 12C7.77002 14.3362 9.66386 16.23 12 16.23Z"
-                    stroke="#503BFF"
-                    strokeWidth="2"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
               <span>Canonical</span>
               <span className="relative block cursor-pointer group">
                 <svg
@@ -331,32 +224,9 @@ export default function Overview({onEditClick ,onEditClick2 }) {
           </div>
         </div>
       </div>
-      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
-        <div className="grid grid-cols-2">
+      <div className="p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
+        <div className="grid grid-cols-2 gap-5">
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
-            <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.47483 12.7502L7.24983 16.5252C8.79983 18.0752 11.3165 18.0752 12.8748 16.5252L16.5332 12.8668C18.0832 11.3168 18.0832 8.80016 16.5332 7.24183L12.7498 3.47516C11.9582 2.6835 10.8665 2.2585 9.74983 2.31683L5.58316 2.51683C3.9165 2.59183 2.5915 3.91683 2.50816 5.57516L2.30816 9.74183C2.25816 10.8668 2.68316 11.9585 3.47483 12.7502Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M7.91659 9.99992C9.06718 9.99992 9.99992 9.06718 9.99992 7.91659C9.99992 6.76599 9.06718 5.83325 7.91659 5.83325C6.76599 5.83325 5.83325 6.76599 5.83325 7.91659C5.83325 9.06718 6.76599 9.99992 7.91659 9.99992Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
             <div className="flex flex-col">
               <span className="block">Robots Tag</span>
               <span className="text-xs font-semibold text-zinc-300">
@@ -386,29 +256,6 @@ export default function Overview({onEditClick ,onEditClick2 }) {
             </span>
           </div>
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
-            <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.47483 12.7502L7.24983 16.5252C8.79983 18.0752 11.3165 18.0752 12.8748 16.5252L16.5332 12.8668C18.0832 11.3168 18.0832 8.80016 16.5332 7.24183L12.7498 3.47516C11.9582 2.6835 10.8665 2.2585 9.74983 2.31683L5.58316 2.51683C3.9165 2.59183 2.5915 3.91683 2.50816 5.57516L2.30816 9.74183C2.25816 10.8668 2.68316 11.9585 3.47483 12.7502Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M7.91659 9.99992C9.06718 9.99992 9.99992 9.06718 9.99992 7.91659C9.99992 6.76599 9.06718 5.83325 7.91659 5.83325C6.76599 5.83325 5.83325 6.76599 5.83325 7.91659C5.83325 9.06718 6.76599 9.99992 7.91659 9.99992Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
             <div className="flex flex-col">
               <span className="block">X-Robots-Tag</span>
               <span className="text-xs font-semibold text-zinc-300">
@@ -439,27 +286,9 @@ export default function Overview({onEditClick ,onEditClick2 }) {
           </div>
         </div>
       </div>
-      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
+      <div className="p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="grid grid-cols-2 gap-5">
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
-            <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.15587 12.9142H9.24587V20.1142C9.24587 21.1742 10.5659 21.6742 11.2659 20.8742L18.8359 12.2742C19.4959 11.5242 18.9659 10.3542 17.9659 10.3542H14.8759V3.15425C14.8759 2.09425 13.5559 1.59425 12.8559 2.39425L5.28588 10.9942C4.63588 11.7442 5.16587 12.9142 6.15587 12.9142Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
             <div className="flex flex-col">
               <span className="block">Keywords</span>
               <span className="text-xs font-semibold text-zinc-300">
@@ -489,48 +318,6 @@ export default function Overview({onEditClick ,onEditClick2 }) {
             </span>
           </div>
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
-            <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21 7V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V7C3 4 4.5 2 8 2H16C19.5 2 21 4 21 7Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14.5 4.5V6.5C14.5 7.6 15.4 8.5 16.5 8.5H18.5"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M8 13H12"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M8 17H16"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
             <div className="flex flex-col">
               <span className="block">Word Count</span>
               <span className="text-xs font-semibold text-zinc-300">
@@ -560,39 +347,6 @@ export default function Overview({onEditClick ,onEditClick2 }) {
             </span>
           </div>
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
-            <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21 7V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V7C3 4 4.5 2 8 2H16C19.5 2 21 4 21 7Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14.5 4.5V6.5C14.5 7.6 15.4 8.5 16.5 8.5H18.5"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeMiterlimit="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M7.48002 15.4901C7.15002 14.4601 7.53999 13.1901 8.60999 12.8401C9.17999 12.6601 9.87999 12.8101 10.27 13.3601C10.64 12.7901 11.37 12.6601 11.93 12.8401C13.01 13.1901 13.39 14.4601 13.07 15.4901C12.56 17.1201 10.77 17.9701 10.27 17.9701C9.77999 17.9601 8.01002 17.1301 7.48002 15.4901Z"
-                  stroke="#503BFF"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
             <div className="flex flex-col">
               <span className="block">Publisher</span>
               <span className="text-xs font-semibold text-zinc-300">
@@ -622,58 +376,6 @@ export default function Overview({onEditClick ,onEditClick2 }) {
             </span>
           </div>
           <div className={`flex items-center gap-1.5 font-semibold text-lg`}>
-            <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19.0599 18.6698L15.216 11L11.3721 18.6698"
-                  stroke="#503BFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12.0723 17.3047H18.395"
-                  stroke="#503BFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12.0935 5.38647H4.01978"
-                  stroke="#503BFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M8.03711 4V5.38654"
-                  stroke="#503BFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M10.0653 5.36621C10.0653 8.93454 7.34087 11.83 4 11.83"
-                  stroke="#503BFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12.0935 11.83C10.6418 11.83 9.32931 11.0347 8.41455 9.77051"
-                  stroke="#503BFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
             <div className="flex flex-col">
               <span className="block">Lang</span>
               <span className="text-xs font-semibold text-zinc-300">
@@ -704,45 +406,8 @@ export default function Overview({onEditClick ,onEditClick2 }) {
           </div>
         </div>
       </div>
-      <div className="p-5 my-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
+      <div className="p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
         <div className="flex gap-6 pb-2 border-b border-black/5">
-          <span className="w-9 h-9 rounded-md flex justify-center items-center bg-[#E9E6FF]">
-            <svg
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.5 7H22"
-                stroke="#503BFF"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M10.5 12H22"
-                stroke="#503BFF"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M1.5 17H22"
-                stroke="#503BFF"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <rect
-                x="1.75"
-                y="4.75"
-                width="8.5"
-                height="8.5"
-                rx="1.25"
-                stroke="#503BFF"
-                strokeWidth="1.5"
-              />
-            </svg>
-          </span>
           <p className="flex flex-col items-center">
             <span className="font-semibold">H1</span>
             <span className="text-xs text-zinc-400">0</span>
