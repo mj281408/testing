@@ -1,4 +1,9 @@
-export default function Overview({ onEditClick, onEditClick2 }) {
+interface OverviewProps {
+  onEditClick: () => void;
+  onEditClick2: () => void;
+}
+
+export default function Overview({ onEditClick, onEditClick2 }: OverviewProps): JSX.Element {
   return (
     <>
       <div className="p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">

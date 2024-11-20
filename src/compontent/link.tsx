@@ -71,7 +71,7 @@ export default function Links() {
           </button>
         </div>
         <p className="mt-3 text-xl font-bold text-orange-500">Internal Links</p>
-        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5">
+        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5 dark:border-white/20">
           <p>
             https://tailwindcss.com/blog/2024-05-24-catalyst-application-layouts
           </p>
@@ -82,7 +82,7 @@ export default function Links() {
             </span>
           </p>
         </div>
-        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5">
+        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5 dark:border-white/20">
           <p>
             https://tailwindcss.com/blog/2024-05-24-catalyst-application-layouts
           </p>
@@ -94,7 +94,7 @@ export default function Links() {
           </p>
         </div>
         <p className="mt-3 text-xl font-bold text-orange-500">External Links</p>
-        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5">
+        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5 dark:border-white/20">
           <p>
             https://tailwindcss.com/blog/2024-05-24-catalyst-application-layouts
           </p>
@@ -105,7 +105,7 @@ export default function Links() {
             </span>
           </p>
         </div>
-        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5">
+        <div className="pt-3 mt-3 text-sm font-semibold border-t border-black/5 dark:border-white/20">
           <p>
             https://tailwindcss.com/blog/2024-05-24-catalyst-application-layouts
           </p>

@@ -1,17 +1,10 @@
-import React, { useState } from "react";
+import React from 'react';
 
-interface DecChangeProps {
+interface EditAltProps {
   Back: () => void;
 }
 
-const DecChange: React.FC<DecChangeProps> = ({ Back }) => {
-  const [text, setText] = useState<string>("");
-
-  const wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
-  const charCount = text.length;
-
-  const isMetaDescriptionInvalid = charCount < 70 || charCount > 155;
-
+const EditAlt: React.FC<EditAltProps> = ({ Back }) => {
   return (
     <div className="relative p-5 mb-2 bg-white dark:bg-[#1d1d1d] rounded-md shadow-md">
       <button className="flex items-center w-full gap-1 mb-2">
@@ -29,7 +22,7 @@ const DecChange: React.FC<DecChangeProps> = ({ Back }) => {
             fill="inherit"
           />
         </svg>
-        <span onClick={Back}>Edit Description</span>
+        <span onClick={Back}>Edit alt text</span>
         <svg
           className="ms-auto fill-orange-500"
           width="16"
@@ -56,47 +49,18 @@ const DecChange: React.FC<DecChangeProps> = ({ Back }) => {
           </defs>
         </svg>
       </button>
+      <img
+        className="object-contain w-full mx-auto mb-5 h-44"
+        src="https://thevanillaroom.co.uk/wp-content/uploads/2023/12/900px-Image-Placeholder.jpg"
+        alt="Placeholder"
+      />
       <textarea
         className="block w-full px-4 py-2 bg-white border h-40 rounded-md outline-none border-black/20 dark:bg-[#292929] dark:border-white/20 placeholder:text-black/20 dark:placeholder:text-white/20"
-        placeholder="Write your description Here"
-        value={text}
-        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)}
+        placeholder="Write your alt text for image"
       ></textarea>
-      <div className="flex justify-center pt-4 gap-7">
-        <div className="flex flex-col items-center">
-          <span className="text-xl font-bold text-orange-500">Words</span>
-          <span className="text-xl font-semibold text-zinc-400">
-            {wordCount}
-          </span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="text-xl font-bold text-orange-500">Characters</span>
-          <span className="text-xl font-semibold text-zinc-400">
-            {charCount}
-          </span>
-        </div>
-      </div>
-      <div className="flex items-center gap-4">
-        <span className="text-xl font-bold text-orange-500">
-          Meta Description
-        </span>
-        <span className={`text-xl font-semibold text-zinc-400`}>
-          <span
-            className={`${
-              isMetaDescriptionInvalid ? "text-red-500" : "text-green-400"
-            }`}
-          >
-            {charCount}
-          </span>
-          /155
-        </span>
-      </div>
-      <p className="mb-3 text-sm text-zinc-500">
-        More than 70 and less than 155 Characters
-      </p>
     </div>
   );
-}
+};
 
-export default DecChange;
+export default EditAlt;
 

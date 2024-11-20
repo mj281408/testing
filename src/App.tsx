@@ -9,6 +9,7 @@ import Social from "./compontent/social";
 import WordCouter from "./compontent/wordcounter";
 import TitleChange from "./compontent/titlechange";
 import DecChange from "./compontent/decchange";
+import EditAlt from "./compontent/editalt";
 // import Advance from "./compontent/advanced";
 
 function App() {
@@ -171,12 +172,13 @@ function App() {
         )}
         {activeTab === 2 ? <Heading /> : <></>}
         {activeTab === 3 ? <Links /> : <></>}
-        {activeTab === 4 ? <Images /> : <></>}
+        {activeTab === 4 ? <Images editAlt={() => setActiveTab(10)} /> : <></>}
         {activeTab === 5 ? <Schema /> : <></>}
         {activeTab === 6 ? <Social /> : <></>}
         {activeTab === 7 ? <WordCouter /> : <></>}
         {activeTab === 8 ? <TitleChange Back={() => setActiveTab(1)} /> : <></>}
         {activeTab === 9 ? <DecChange Back={() => setActiveTab(1)} /> : <></>}
+        {activeTab === 10 ? <EditAlt Back={() => setActiveTab(4)} /> : <></>}
         {/* {activeTab === 7 ? <Advance /> : <></>} */}
         {dropdown ? (
           <div className="bg-white dark:bg-[#1d1d1d] border rounded-md border-[#9ca3af] dark:border-white/20 absolute p-4 w-[320px] top-5 left-0 right-0 mx-auto">
