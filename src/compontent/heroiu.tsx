@@ -4,8 +4,10 @@ import Offcanvas from "./offcanvas";
 export default function Heroiu() {
   const [isChecked, setIsChecked] = useState(false);
   const [setting, setSetting] = useState(false);
+  const [setting2, setSetting2] = useState(false);
+  const [setting3, setSetting3] = useState(false);
   const [webList, setWebList] = useState(false);
-  const [mainTab, setMainTab] = useState(false);
+  const [mainTab, setMainTab] = useState(1);
   const [tab, setTab] = useState(1);
   const [tab2, setTab2] = useState(1);
 
@@ -166,7 +168,7 @@ export default function Heroiu() {
       </div>
       <img src="web.png" alt="" />
       <Offcanvas isOpen={isOffcanvas1Open} isLeft={false}>
-        {mainTab ? (
+        {mainTab === 1 && (
           <>
             <div className="flex items-center justify-between gap-2 p-3">
               <div className="overflow-hidden rounded-full size-7 shrink-0">
@@ -256,13 +258,13 @@ export default function Heroiu() {
                   }`}
                 >
                   <li className="hover:bg-gray-200">
-                    <a href="">Go to Website</a>
+                    <a href="#">Go to Website</a>
                   </li>
                   <li className="hover:bg-gray-200">
-                    <a href="">Account Settings</a>
+                    <a href="#">Account Settings</a>
                   </li>
                   <li className="hover:bg-gray-200">
-                    <a href="">Logout</a>
+                    <a href="#">Logout</a>
                   </li>
                 </ul>
               </button>
@@ -327,7 +329,7 @@ export default function Heroiu() {
                     <>
                       <div
                         onClick={() => {
-                          setMainTab(false);
+                          setMainTab(2);
                         }}
                         className="p-3 border-b cursor-pointer hover:bg-gray-100"
                       >
@@ -350,10 +352,16 @@ export default function Heroiu() {
               )}
             </div>
           </>
-        ) : (
+        )}
+        {mainTab === 2 && (
           <>
             <div className="px-3">
-              <p onClick={()=>{setMainTab(true)}} className="flex items-center gap-2 pt-3 text-xs font-bold cursor-pointer text-zinc-700">
+              <p
+                onClick={() => {
+                  setMainTab(1);
+                }}
+                className="flex items-center gap-2 pt-3 text-xs font-bold cursor-pointer text-zinc-700"
+              >
                 <svg
                   width="6"
                   height="10"
@@ -364,14 +372,14 @@ export default function Heroiu() {
                   <path
                     d="M5 9.02273L1 5.01136L5 1"
                     stroke="#292D32"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 <span>PROJECTS</span>
               </p>
-              <div className="flex items-center justify-between gap-2 py-4">
+              <div className="flex items-center justify-between gap-2 py-2">
                 <div className="size-6">
                   <img
                     src="https://static.semrush.com/semblog-next-static/favicon/favicon.ico"
@@ -398,19 +406,70 @@ export default function Heroiu() {
                     </svg>
                   </p>
                 </div>
-                <button>
+                <button
+                  onClick={() => {
+                    setSetting2(!setting2);
+                  }}
+                  className="relative flex items-center justify-center text-left size-5"
+                >
                   <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 13 13"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      d="M6 4.3125C6.93281 4.3125 7.6875 5.06719 7.6875 6C7.6875 6.93281 6.93281 7.6875 6 7.6875C5.06719 7.6875 4.3125 6.93281 4.3125 6C4.3125 5.06719 5.06719 4.3125 6 4.3125ZM4.3125 1.875C4.3125 2.80781 5.06719 3.5625 6 3.5625C6.93281 3.5625 7.6875 2.80781 7.6875 1.875C7.6875 0.942188 6.93281 0.1875 6 0.1875C5.06719 0.1875 4.3125 0.942188 4.3125 1.875ZM4.3125 10.125C4.3125 11.0578 5.06719 11.8125 6 11.8125C6.93281 11.8125 7.6875 11.0578 7.6875 10.125C7.6875 9.19219 6.93281 8.4375 6 8.4375C5.06719 8.4375 4.3125 9.19219 4.3125 10.125Z"
-                      fill="#6B7280"
-                    />
+                    <g clipPath="url(#clip0_3553_6)">
+                      <path
+                        d="M6.58203 4.70703C7.51484 4.70703 8.26953 5.46172 8.26953 6.39453C8.26953 7.32734 7.51484 8.08203 6.58203 8.08203C5.64922 8.08203 4.89453 7.32734 4.89453 6.39453C4.89453 5.46172 5.64922 4.70703 6.58203 4.70703ZM4.89453 2.26953C4.89453 3.20234 5.64922 3.95703 6.58203 3.95703C7.51484 3.95703 8.26953 3.20234 8.26953 2.26953C8.26953 1.33672 7.51484 0.582031 6.58203 0.582031C5.64922 0.582031 4.89453 1.33672 4.89453 2.26953ZM4.89453 10.5195C4.89453 11.4523 5.64922 12.207 6.58203 12.207C7.51484 12.207 8.26953 11.4523 8.26953 10.5195C8.26953 9.58672 7.51484 8.83203 6.58203 8.83203C5.64922 8.83203 4.89453 9.58672 4.89453 10.5195Z"
+                        fill="#B0B0B0"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_3553_6">
+                        <rect
+                          width="12"
+                          height="12"
+                          fill="white"
+                          transform="translate(0.582031 0.394531)"
+                        />
+                      </clipPath>
+                    </defs>
                   </svg>
+                  <ul
+                    className={`absolute bg-white border rounded-md top-full left-full w-[200px] *:py-1.5 *:px-2 text-gray-600 text-sm font-semibold py-2 *:transition-all *:duration-500 ${
+                      setting2 ? `block` : `hidden`
+                    }`}
+                  >
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#">Open in Heurio app</a>
+                    </li>
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#">Copy project link</a>
+                    </li>
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#">Project details</a>
+                    </li>
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#">Rename page</a>
+                    </li>
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#">Export project</a>
+                    </li>
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#" className="text-orange-600">
+                        Delete page
+                      </a>
+                    </li>
+                    <li className="border-t hover:bg-gray-200 ">
+                      <a href="#">Archive project</a>
+                    </li>
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#" className="text-orange-600">
+                        Delete project
+                      </a>
+                    </li>
+                  </ul>
                 </button>
               </div>
             </div>
@@ -440,22 +499,492 @@ export default function Heroiu() {
                 Resolved(0)
               </button>
             </div>
-           {
-            tab2=== 1 &&(
+            {tab2 === 1 && (
+              <>
+                <div
+                  className="relative z-30 p-3 border-b cursor-pointer"
+                  onClick={() => {
+                    setMainTab(3);
+                  }}
+                >
+                  <div className="flex items-center gap-1">
+                    <div className="flex">
+                      <div className="relative z-20 flex items-center justify-center text-xs font-semibold text-center text-white border-2 border-white rounded-full size-6 bg-sky-500">
+                        <span>1</span>
+                      </div>
+                      <div className="relative z-10 overflow-hidden -translate-x-2 border-2 border-transparent rounded-full size-6 shrink-0">
+                        <img
+                          src="https://lh3.googleusercontent.com/a/ACg8ocKzSCVS32Qze7q_j2eJFSePFdbdb3Qgp8AbN2XMKEGZWeMUrw=s96-c"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <p className="text-sm font-semibold">
+                      Jenny{" "}
+                      <span className="text-xs text-gray-500">
+                        a few seconds ago
+                      </span>
+                    </p>
+                  </div>
+                  <p className="text-sm font-medium text-gray-700">
+                    Lorem ipsum
+                  </p>
+                </div>
                 <div className="py-8 font-semibold text-center text-gray-500">
-                <p className="text-sm">0 active heurio</p>
-                <p className="text-xs text-gray-400">Switch to Comment View to add one</p>
-            </div>
-            )
-           }
-           {
-            tab2=== 2 &&(
-                <div className="py-8 font-semibold text-center text-gray-500">
+                  <p className="text-sm">0 active heurio</p>
+                  <p className="text-xs text-gray-400">
+                    Switch to Comment View to add one
+                  </p>
+                </div>
+              </>
+            )}
+            {tab2 === 2 && (
+              <div className="py-8 font-semibold text-center text-gray-500">
                 <p className="text-sm">0 resolved heurio</p>
-                <p className="text-xs text-gray-400">Use resolve to hide an active heurio</p>
+                <p className="text-xs text-gray-400">
+                  Use resolve to hide an active heurio
+                </p>
+              </div>
+            )}
+          </>
+        )}
+        {mainTab === 3 && (
+          <>
+            <div className="px-3">
+              <p
+                onClick={() => {
+                  setMainTab(2);
+                }}
+                className="flex items-center gap-2 pt-3 text-xs font-bold cursor-pointer text-zinc-700"
+              >
+                <svg
+                  width="6"
+                  height="10"
+                  viewBox="0 0 6 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 9.02273L1 5.01136L5 1"
+                    stroke="#292D32"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span>BACK</span>
+                <span className="flex items-center gap-2 ms-auto">
+                  <svg
+                    width="6"
+                    height="10"
+                    viewBox="0 0 6 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.25992 9.28016C5.06992 9.28016 4.87992 9.21016 4.72992 9.06016L1.19992 5.53016C0.909922 5.24016 0.909922 4.76016 1.19992 4.47016L4.72992 0.940156C5.01992 0.650156 5.49992 0.650156 5.78992 0.940156C6.07992 1.23016 6.07992 1.71016 5.78992 2.00016L2.78992 5.00016L5.78992 8.00016C6.07992 8.29016 6.07992 8.77016 5.78992 9.06016C5.64992 9.21016 5.45992 9.28016 5.25992 9.28016Z"
+                      fill="#292D32"
+                    />
+                  </svg>
+                  <span> 1/1</span>
+                  <svg
+                    width="6"
+                    height="10"
+                    viewBox="0 0 6 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.739687 9.28016C0.549687 9.28016 0.359688 9.21016 0.209688 9.06016C-0.0803125 8.77016 -0.0803125 8.29016 0.209688 8.00016L3.20969 5.00016L0.209688 2.00016C-0.0803125 1.71016 -0.0803125 1.23016 0.209688 0.940156C0.499687 0.650156 0.979688 0.650156 1.26969 0.940156L4.79969 4.47016C5.08969 4.76016 5.08969 5.24016 4.79969 5.53016L1.26969 9.06016C1.11969 9.21016 0.929687 9.28016 0.739687 9.28016Z"
+                      fill="#292D32"
+                    />
+                  </svg>
+                </span>
+              </p>
+              <div className="flex items-center justify-between gap-2 py-2">
+                <div className="flex items-center justify-center font-semibold text-white rounded-full size-6 bg-sky-500">
+                  1
+                </div>
+                <div className="me-auto">
+                  <p className="text-sm font-semibold text-gray-800">Jenny</p>
+                  <p className="flex items-center gap-1 text-xs font-semibold text-gray-500">
+                    an hour ago
+                  </p>
+                </div>
+                <input
+                  className="size-4"
+                  style={{ accentColor: "#0ea5e9" }}
+                  type="checkbox"
+                />
+                <button
+                  onClick={() => {
+                    setSetting3(!setting3);
+                  }}
+                  className="relative flex items-center justify-center text-left size-5"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_3553_6)">
+                      <path
+                        d="M6.58203 4.70703C7.51484 4.70703 8.26953 5.46172 8.26953 6.39453C8.26953 7.32734 7.51484 8.08203 6.58203 8.08203C5.64922 8.08203 4.89453 7.32734 4.89453 6.39453C4.89453 5.46172 5.64922 4.70703 6.58203 4.70703ZM4.89453 2.26953C4.89453 3.20234 5.64922 3.95703 6.58203 3.95703C7.51484 3.95703 8.26953 3.20234 8.26953 2.26953C8.26953 1.33672 7.51484 0.582031 6.58203 0.582031C5.64922 0.582031 4.89453 1.33672 4.89453 2.26953ZM4.89453 10.5195C4.89453 11.4523 5.64922 12.207 6.58203 12.207C7.51484 12.207 8.26953 11.4523 8.26953 10.5195C8.26953 9.58672 7.51484 8.83203 6.58203 8.83203C5.64922 8.83203 4.89453 9.58672 4.89453 10.5195Z"
+                        fill="#B0B0B0"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_3553_6">
+                        <rect
+                          width="12"
+                          height="12"
+                          fill="white"
+                          transform="translate(0.582031 0.394531)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <ul
+                    className={`absolute bg-white border rounded-md top-full left-full w-[200px] *:py-1.5 *:px-2 text-gray-600 text-sm font-semibold py-2 *:transition-all *:duration-500 ${
+                      setting3 ? `block` : `hidden`
+                    }`}
+                  >
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#">Open in Heurio app</a>
+                    </li>
+                    <li className="hover:bg-gray-200 ">
+                      <a href="#">Copy project link</a>
+                    </li>
+                    <li className="border-t hover:bg-gray-200">
+                      <a href="#" className="text-orange-600">
+                        Delete Heurio
+                      </a>
+                    </li>
+                  </ul>
+                </button>
+              </div>
             </div>
-            )
-           }            
+            <div className="flex *:w-full text-sm font-semibold *:py-2 border-b">
+              <button
+                onClick={() => {
+                  setTab2(1);
+                }}
+                className={`border-b-2 ${
+                  tab2 === 1
+                    ? "border-sky-500 text-sky-500"
+                    : "text-gray-700 border-transparent"
+                }`}
+              >
+                <svg
+                  className={`mx-auto ${
+                    tab2 === 1 ? "fill-sky-500" : "fill-[#292D32]"
+                  }`}
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18.4704 16.83L18.8604 19.99C18.9604 20.82 18.0704 21.4 17.3604 20.97L13.9004 18.91C13.6604 18.77 13.6004 18.47 13.7304 18.23C14.2304 17.31 14.5004 16.27 14.5004 15.23C14.5004 11.57 11.3604 8.59 7.50038 8.59C6.71038 8.59 5.94038 8.71 5.22038 8.95C4.85038 9.07 4.49038 8.73 4.58038 8.35C5.49038 4.71 8.99038 2 13.1704 2C18.0504 2 22.0004 5.69 22.0004 10.24C22.0004 12.94 20.6104 15.33 18.4704 16.83Z"
+                    fill="inherit"
+                  />
+                  <path
+                    d="M13 15.2298C13 16.4198 12.56 17.5198 11.82 18.3898C10.83 19.5898 9.26 20.3598 7.5 20.3598L4.89 21.9098C4.45 22.1798 3.89 21.8098 3.95 21.2998L4.2 19.3298C2.86 18.3998 2 16.9098 2 15.2298C2 13.4698 2.94 11.9198 4.38 10.9998C5.27 10.4198 6.34 10.0898 7.5 10.0898C10.54 10.0898 13 12.3898 13 15.2298Z"
+                    fill="inherit"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() => {
+                  setTab2(2);
+                }}
+                className={`border-b-2 ${
+                  tab2 === 2
+                    ? "border-sky-500 text-sky-500"
+                    : "text-gray-700 border-transparent"
+                }`}
+              >
+                <svg
+                  className={`mx-auto ${
+                    tab2 === 2 ? "fill-sky-500" : "fill-[#292D32]"
+                  }`}
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 1.96875H8C4 1.96875 2 3.96875 2 7.96875V12.9688C2 17.9688 4 18.9688 8 18.9688H8.5C8.78 18.9688 9.14 19.1488 9.3 19.3688L10.8 21.3688C11.46 22.2488 12.54 22.2488 13.2 21.3688L14.7 19.3688C14.89 19.1188 15.19 18.9688 15.5 18.9688H16C20 18.9688 22 16.9688 22 12.9688V7.96875C22 3.96875 20 1.96875 16 1.96875ZM8.53 12.1687C8.82 12.4587 8.82 12.9387 8.53 13.2287C8.38 13.3787 8.19 13.4487 8 13.4487C7.81 13.4487 7.62 13.3787 7.47 13.2287L5.47 11.2287C5.18 10.9387 5.18 10.4587 5.47 10.1687L7.47 8.16875C7.76 7.87875 8.24 7.87875 8.53 8.16875C8.82 8.45875 8.82 8.93875 8.53 9.22875L7.06 10.6987L8.53 12.1687ZM13.69 8.65875L11.69 13.3287C11.57 13.6087 11.29 13.7787 11 13.7787C10.9 13.7787 10.8 13.7587 10.7 13.7188C10.32 13.5588 10.14 13.1187 10.31 12.7287L12.31 8.05875C12.47 7.67875 12.91 7.49875 13.3 7.66875C13.68 7.83875 13.85 8.27875 13.69 8.65875ZM18.53 11.2287L16.53 13.2287C16.38 13.3787 16.19 13.4487 16 13.4487C15.81 13.4487 15.62 13.3787 15.47 13.2287C15.18 12.9387 15.18 12.4587 15.47 12.1687L16.94 10.6987L15.47 9.22875C15.18 8.93875 15.18 8.45875 15.47 8.16875C15.76 7.87875 16.24 7.87875 16.53 8.16875L18.53 10.1687C18.82 10.4587 18.82 10.9387 18.53 11.2287Z"
+                    fill="inherit"
+                  />
+                </svg>
+              </button>
+            </div>
+            {tab2 === 1 && (
+              <>
+                <div className="p-3">
+                  <button className="w-full py-2.5 text-sm font-semibold text-white rounded-md bg-sky-500">
+                    Copy link
+                  </button>
+                  <p className="pt-3 text-sm font-semibold">Note</p>
+                  <textarea
+                    className="block w-full p-2 border border-transparent rounded-md hover:border-gray-300"
+                    placeholder="add a comment"
+                  >
+                    description
+                  </textarea>
+                  <p className="pt-3 pb-1 text-sm font-semibold">Suggestion</p>
+                  <textarea
+                    className="block w-full p-2 border border-transparent rounded-md hover:border-gray-300"
+                    placeholder="add your suggestion"
+                  ></textarea>
+                  <img
+                    className="w-full mt-3 rounded-md"
+                    src="https://www.semrush.com/company/static/images/two-employees.0ff52a3ec01087df745d350d9cc482e4.webp"
+                    alt=""
+                  />
+                  <ul className="flex flex-wrap gap-2 my-2 text-sm font-semibold text-gray-500">
+                    <li className="flex items-center gap-1 p-1 border rounded-full pe-2">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M22 12C22 6.49 17.51 2 12 2C6.49 2 2 6.49 2 12C2 14.9 3.25 17.51 5.23 19.34C5.23 19.35 5.23 19.35 5.22 19.36C5.32 19.46 5.44 19.54 5.54 19.63C5.6 19.68 5.65 19.73 5.71 19.77C5.89 19.92 6.09 20.06 6.28 20.2C6.35 20.25 6.41 20.29 6.48 20.34C6.67 20.47 6.87 20.59 7.08 20.7C7.15 20.74 7.23 20.79 7.3 20.83C7.5 20.94 7.71 21.04 7.93 21.13C8.01 21.17 8.09 21.21 8.17 21.24C8.39 21.33 8.61 21.41 8.83 21.48C8.91 21.51 8.99 21.54 9.07 21.56C9.31 21.63 9.55 21.69 9.79 21.75C9.86 21.77 9.93 21.79 10.01 21.8C10.29 21.86 10.57 21.9 10.86 21.93C10.9 21.93 10.94 21.94 10.98 21.95C11.32 21.98 11.66 22 12 22C12.34 22 12.68 21.98 13.01 21.95C13.05 21.95 13.09 21.94 13.13 21.93C13.42 21.9 13.7 21.86 13.98 21.8C14.05 21.79 14.12 21.76 14.2 21.75C14.44 21.69 14.69 21.64 14.92 21.56C15 21.53 15.08 21.5 15.16 21.48C15.38 21.4 15.61 21.33 15.82 21.24C15.9 21.21 15.98 21.17 16.06 21.13C16.27 21.04 16.48 20.94 16.69 20.83C16.77 20.79 16.84 20.74 16.91 20.7C17.11 20.58 17.31 20.47 17.51 20.34C17.58 20.3 17.64 20.25 17.71 20.2C17.91 20.06 18.1 19.92 18.28 19.77C18.34 19.72 18.39 19.67 18.45 19.63C18.56 19.54 18.67 19.45 18.77 19.36C18.77 19.35 18.77 19.35 18.76 19.34C20.75 17.51 22 14.9 22 12ZM16.94 16.97C14.23 15.15 9.79 15.15 7.06 16.97C6.62 17.26 6.26 17.6 5.96 17.97C4.44 16.43 3.5 14.32 3.5 12C3.5 7.31 7.31 3.5 12 3.5C16.69 3.5 20.5 7.31 20.5 12C20.5 14.32 19.56 16.43 18.04 17.97C17.75 17.6 17.38 17.26 16.94 16.97Z"
+                          fill="#6B7280"
+                        />
+                        <path
+                          d="M12 6.92969C9.93 6.92969 8.25 8.60969 8.25 10.6797C8.25 12.7097 9.84 14.3597 11.95 14.4197C11.98 14.4197 12.02 14.4197 12.04 14.4197C12.06 14.4197 12.09 14.4197 12.11 14.4197C12.12 14.4197 12.13 14.4197 12.13 14.4197C14.15 14.3497 15.74 12.7097 15.75 10.6797C15.75 8.60969 14.07 6.92969 12 6.92969Z"
+                          fill="#6B7280"
+                        />
+                      </svg>
+                      <span>Unassigned</span>
+                    </li>
+                    <li className="flex items-center gap-1 p-1 border rounded-full pe-2">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.9688 2C6.44875 2 1.96875 6.48 1.96875 12C1.96875 17.52 6.44875 22 11.9688 22C17.4888 22 21.9688 17.52 21.9688 12C21.9688 6.48 17.4988 2 11.9688 2ZM11.9987 16.23C9.65875 16.23 7.76875 14.34 7.76875 12C7.76875 9.66 9.65875 7.77 11.9987 7.77C14.3387 7.77 16.2287 9.66 16.2287 12C16.2287 14.34 14.3387 16.23 11.9987 16.23Z"
+                          fill="#6B7280"
+                        />
+                      </svg>
+                      <span>Neutral</span>
+                    </li>
+                    <li className="flex items-center gap-1 p-1 border rounded-full pe-2">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM6.85 9.44C7.27 8.47 8.06 7.72 9.15 7.38V6.58C9.15 6.17 9.49 5.83 9.9 5.83C10.31 5.83 10.65 6.17 10.65 6.58V7.17H13.36V6.58C13.36 6.17 13.7 5.83 14.11 5.83C14.52 5.83 14.86 6.17 14.86 6.58V7.37C15.95 7.71 16.74 8.46 17.16 9.43C17.3 9.76 17.06 10.14 16.7 10.14H7.31C6.95 10.14 6.71 9.77 6.85 9.44ZM17.5 14.17C17.5 16.37 16 18.17 13.5 18.17H10.5C8 18.17 6.5 16.37 6.5 14.17V11.64C6.5 11.36 6.72 11.14 7 11.14H17C17.28 11.14 17.5 11.36 17.5 11.64V14.17Z"
+                          fill="#6B7280"
+                        />
+                      </svg>
+                      <span>Due Date</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="p-3 text-sm font-semibold border-t border-b">
+                  <h3 className="pb-2 text-gray-600">Guideline</h3>
+                  <select className="block w-full p-2 text-gray-600 border rounded-md outline-none">
+                    <option>option1</option>
+                    <option>option1</option>
+                    <option>option1</option>
+                    <option>option1</option>
+                    <option>option1</option>
+                  </select>
+                </div>
+                <div className="p-3 text-sm font-semibold">
+                  <h3 className="text-gray-600">Comments</h3>
+                  <textarea
+                    className="block w-full p-1 border rounded-md outline-none"
+                    name=""
+                    id=""
+                  ></textarea>
+                </div>
+              </>
+            )}
+            {tab2 === 2 && (
+              <>
+                <div className="px-2 py-4 space-y-2">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-600">
+                    <svg
+                      width="20"
+                      height="20"
+                      className="shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 2V5"
+                        stroke="#4b5563"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16 2V5"
+                        stroke="#4b5563"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M3.5 9.08997H20.5"
+                        stroke="#4b5563"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+                        stroke="#4b5563"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.9955 13.7H12.0045"
+                        stroke="#4b5563"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.29431 13.7H8.30329"
+                        stroke="#4b5563"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M8.29431 16.7H8.30329"
+                        stroke="#4b5563"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span>11:39, 22 November 2024 </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-600">
+                    <svg
+                      width="20"
+                      height="20"
+                      className="shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17.3333 1.86722L10.6667 3.20055C10.275 3.27555 10 3.61723 10 4.01723V8.33389C10 8.79222 10.375 9.16722 10.8333 9.16722H17.5C17.9583 9.16722 18.3333 8.79222 18.3333 8.33389V2.68389C18.3333 2.15889 17.85 1.76722 17.3333 1.86722Z"
+                        fill="#4B5563"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17.3333 18.132L10.6667 16.7987C10.275 16.7237 10 16.382 10 15.982V11.6654C10 11.207 10.375 10.832 10.8333 10.832H17.5C17.9583 10.832 18.3333 11.207 18.3333 11.6654V17.3154C18.3333 17.8404 17.85 18.232 17.3333 18.132Z"
+                        fill="#4B5563"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M7.32433 3.80161L2.32433 4.85994C1.941 4.94327 1.66602 5.28494 1.66602 5.67661V8.33495C1.66602 8.79328 2.04102 9.16828 2.49935 9.16828H7.49935C7.95768 9.16828 8.33268 8.79328 8.33268 8.33495V4.60995C8.33268 4.08495 7.841 3.68494 7.32433 3.80161Z"
+                        fill="#4B5563"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M7.32433 16.1987L2.32433 15.1404C1.941 15.057 1.66602 14.7154 1.66602 14.3237V11.6654C1.66602 11.207 2.04102 10.832 2.49935 10.832H7.49935C7.95768 10.832 8.33268 11.207 8.33268 11.6654V15.3904C8.33268 15.9154 7.841 16.3154 7.32433 16.1987Z"
+                        fill="#4B5563"
+                      />
+                    </svg>
+                    <span> Windows </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-600">
+                    <svg
+                      width="20"
+                      height="20"
+                      className="shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_3592_10)">
+                        <path
+                          d="M5.44922 8.49633L2.46484 3.91039C4.32422 1.59789 7.11328 0.324456 9.96484 0.312737C11.6172 0.301019 13.3047 0.722894 14.8398 1.60961C16.5352 2.59399 17.8242 4.00805 18.6445 5.63305L10.625 5.21117C8.35547 5.07836 6.19531 6.35571 5.44922 8.49633ZM6.73437 10.0002C6.73437 11.8049 8.19531 13.2659 10 13.2659C11.8047 13.2659 13.2656 11.8049 13.2656 10.0002C13.2656 8.19555 11.8047 6.73461 10 6.73461C8.19531 6.73461 6.73437 8.19164 6.73437 10.0002ZM19.0352 6.51586L13.5781 6.79711C15.0586 8.52758 15.082 11.0237 13.8359 12.9377L9.45703 19.6721C11.2734 19.7698 13.1445 19.3713 14.8398 18.387C19.0352 15.9651 20.7344 10.887 19.0352 6.51586ZM5.53516 11.8596L1.89063 4.69164C0.894531 6.21508 0.3125 8.04321 0.3125 10.0002C0.3125 14.844 3.85938 18.8557 8.49609 19.5666L10.9844 14.6916C8.73438 15.1135 6.5625 13.8791 5.53516 11.8596Z"
+                          fill="#4B5563"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_3592_10">
+                          <rect width="20" height="20" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span>chrome 131 </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-600">
+                    <svg
+                      width="20"
+                      height="20"
+                      className="shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.491 1.66797H6.50768C3.47435 1.66797 1.66602 3.4763 1.66602 6.50964V13.4846C1.66602 16.5263 3.47435 18.3346 6.50768 18.3346H13.4827C16.516 18.3346 18.3243 16.5263 18.3243 13.493V6.50964C18.3327 3.4763 16.5243 1.66797 13.491 1.66797ZM15.6243 8.33464C15.6243 8.6763 15.341 8.95964 14.9993 8.95964C14.6577 8.95964 14.3743 8.6763 14.3743 8.33464V6.50964L6.50768 14.3763H8.33268C8.67435 14.3763 8.95768 14.6596 8.95768 15.0013C8.95768 15.343 8.67435 15.6263 8.33268 15.6263H4.99935C4.91602 15.6263 4.83268 15.6096 4.75768 15.5763C4.60768 15.5096 4.48268 15.393 4.41602 15.2346C4.39102 15.1596 4.37435 15.0846 4.37435 15.0013V11.668C4.37435 11.3263 4.65768 11.043 4.99935 11.043C5.34102 11.043 5.62435 11.3263 5.62435 11.668V13.493L13.491 5.6263H11.666C11.3243 5.6263 11.041 5.34297 11.041 5.0013C11.041 4.65964 11.3243 4.3763 11.666 4.3763H14.9993C15.0827 4.3763 15.1577 4.39297 15.241 4.4263C15.391 4.49297 15.516 4.60964 15.5827 4.76797C15.6077 4.84297 15.6243 4.91797 15.6243 5.0013V8.33464Z"
+                        fill="#4B5563"
+                      />
+                    </svg>
+                    <span>1903x953 px </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-600">
+                    <svg
+                      width="20"
+                      height="20"
+                      className="shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.99935 1.66797C5.39935 1.66797 1.66602 5.4013 1.66602 10.0013C1.66602 14.6013 5.39935 18.3346 9.99935 18.3346C14.5993 18.3346 18.3327 14.6013 18.3327 10.0013C18.3327 5.4013 14.5993 1.66797 9.99935 1.66797ZM7.10768 11.2263C7.34935 11.468 7.34935 11.868 7.10768 12.1096C6.98268 12.2346 6.82435 12.293 6.66602 12.293C6.50768 12.293 6.34935 12.2346 6.22435 12.1096L4.55768 10.443C4.31602 10.2013 4.31602 9.8013 4.55768 9.55964L6.22435 7.89297C6.46602 7.6513 6.86602 7.6513 7.10768 7.89297C7.34935 8.13464 7.34935 8.53464 7.10768 8.7763L5.88268 10.0013L7.10768 11.2263ZM11.4077 8.3013L9.74102 12.193C9.64102 12.4263 9.40768 12.568 9.16602 12.568C9.08268 12.568 8.99935 12.5513 8.92435 12.518C8.60768 12.3846 8.45768 12.018 8.59935 11.693L10.266 7.8013C10.3993 7.48463 10.766 7.33464 11.0827 7.4763C11.3993 7.61797 11.541 7.98464 11.4077 8.3013ZM15.441 10.443L13.7743 12.1096C13.6493 12.2346 13.491 12.293 13.3327 12.293C13.1743 12.293 13.016 12.2346 12.891 12.1096C12.6493 11.868 12.6493 11.468 12.891 11.2263L14.116 10.0013L12.891 8.7763C12.6493 8.53464 12.6493 8.13464 12.891 7.89297C13.1327 7.6513 13.5327 7.6513 13.7743 7.89297L15.441 9.55964C15.6827 9.8013 15.6827 10.2013 15.441 10.443Z"
+                        fill="#4B5563"
+                      />
+                    </svg>
+                    <span>
+                      body&gt; div:eq(1)&gt; main#root-content&gt; div&gt;
+                      div#pricing&gt; section:eq(2)&gt;
+                      div#custom-request-container&gt; button&gt; span{" "}
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
           </>
         )}
       </Offcanvas>
