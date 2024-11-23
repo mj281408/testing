@@ -1461,7 +1461,7 @@ export default function Heroiu() {
                     </defs>
                   </svg>
                   <ul
-                    className={`absolute bg-white border rounded-md top-full right-0 w-[200px] *:py-1.5 *:px-2 text-gray-600 text-sm font-semibold py-2 *:transition-all *:duration-500 ${
+                    className={`absolute bg-white z-10 border rounded-md top-full right-0 w-[200px] *:py-1.5 *:px-2 text-gray-600 text-sm font-semibold py-2 *:transition-all *:duration-500 ${
                       setting4 ? `block` : `hidden`
                     }`}
                   >
