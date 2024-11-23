@@ -6,8 +6,12 @@ export default function Heroiu() {
   const [setting, setSetting] = useState(false);
   const [setting2, setSetting2] = useState(false);
   const [setting3, setSetting3] = useState(false);
+  const [setting4, setSetting4] = useState(false);
   const [webList, setWebList] = useState(false);
+  const [screen, setScreen] = useState(false);
+  const [screensize, setScreensize] = useState(false);
   const [mainTab, setMainTab] = useState(1);
+  const [mainTab2, setMainTab2] = useState(1);
   const [tab, setTab] = useState(1);
   const [tab2, setTab2] = useState(1);
 
@@ -21,26 +25,314 @@ export default function Heroiu() {
   const toggleOffcanvas2 = () => setIsOffcanvas2Open(!isOffcanvas2Open);
   return (
     <div>
-      <button
-        onClick={toggleOffcanvas1}
-        className="fixed z-20 flex items-center justify-center bg-white rounded-full shadow-xl size-14 left-5 bottom-5"
-      >
+      <button onClick={()=>{setScreen(!screen)}} className="fixed flex items-center justify-center gap-1 px-4 py-2 text-sm font-bold text-gray-600 bg-white rounded-full shadow-lg right-2 top-2">
+        <span>1920 x 919</span>
         <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
+          width="15"
+          height="15"
+          viewBox="0 0 15 15"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M18.4704 16.83L18.8604 19.99C18.9604 20.82 18.0704 21.4 17.3604 20.97L13.9004 18.91C13.6604 18.77 13.6004 18.47 13.7304 18.23C14.2304 17.31 14.5004 16.27 14.5004 15.23C14.5004 11.57 11.3604 8.59 7.50038 8.59C6.71038 8.59 5.94038 8.71 5.22038 8.95C4.85038 9.07 4.49038 8.73 4.58038 8.35C5.49038 4.71 8.99038 2 13.1704 2C18.0504 2 22.0004 5.69 22.0004 10.24C22.0004 12.94 20.6104 15.33 18.4704 16.83Z"
-            fill="#292D32"
-          />
-          <path
-            d="M13 15.2298C13 16.4198 12.56 17.5198 11.82 18.3898C10.83 19.5898 9.26 20.3598 7.5 20.3598L4.89 21.9098C4.45 22.1798 3.89 21.8098 3.95 21.2998L4.2 19.3298C2.86 18.3998 2 16.9098 2 15.2298C2 13.4698 2.94 11.9198 4.38 10.9998C5.27 10.4198 6.34 10.0898 7.5 10.0898C10.54 10.0898 13 12.3898 13 15.2298Z"
-            fill="#292D32"
+            d="M11.1992 5.11328H7.30548H3.79923C3.19923 5.11328 2.89923 5.83828 3.32423 6.26328L6.56173 9.50078C7.08048 10.0195 7.92423 10.0195 8.44298 9.50078L9.67423 8.26953L11.6805 6.26328C12.0992 5.83828 11.7992 5.11328 11.1992 5.11328Z"
+            fill="#6B7280"
           />
         </svg>
+      </button>
+     {
+      screen?(
+        <div className="fixed right-2 top-12 bg-white border rounded-md w-[280px] overflow-y-auto h-[550px]">
+        <h2 className="p-3 text-xs font-bold text-gray-700 border-b">
+          SCREEN RESOLUTION
+        </h2>
+        <ul className="*:p-3 text-sm font-semibold text-gray-700 border-b">
+          <li className="py-1">
+            <button>My display</button>
+          </li>
+          <li className={`py-1 ${screensize ? "bg-sky-50" : "bg-white"}`}>
+            <button
+              onClick={() => {
+                setScreensize(!screensize);
+              }}
+              className="flex items-center justify-between w-full gap-1"
+            >
+              <span>Custom</span>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.1992 5.11328H7.30548H3.79923C3.19923 5.11328 2.89923 5.83828 3.32423 6.26328L6.56173 9.50078C7.08048 10.0195 7.92423 10.0195 8.44298 9.50078L9.67423 8.26953L11.6805 6.26328C12.0992 5.83828 11.7992 5.11328 11.1992 5.11328Z"
+                  fill="#6B7280"
+                />
+              </svg>
+            </button>
+            {screensize ? (
+              <>
+                <div className="flex items-center gap-3 py-3 text-xs">
+                  <label>Width</label>
+                  <input className="w-[60px] p-2 rounded-md" type="number" />
+                  <label>Height</label>
+                  <input className="w-[60px] p-2 rounded-md" type="number" />
+                </div>
+                <button className="w-full py-2 text-gray-300 bg-gray-200 rounded-md">
+                  Apply
+                </button>
+              </>
+            ) : (
+              <></>
+            )}
+          </li>
+        </ul>
+        <h2 className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-500">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.6327 1.66797H5.34102C3.31602 1.66797 1.66602 3.31797 1.66602 5.34297V10.7596V10.9263C1.66602 12.9596 3.31602 14.6013 5.34102 14.6013H8.54102C8.99935 14.6013 9.37435 14.9763 9.37435 15.4346V16.243C9.37435 16.7013 8.99935 17.0763 8.54102 17.0763H6.52435C6.18268 17.0763 5.89935 17.3596 5.89935 17.7013C5.89935 18.043 6.17435 18.3346 6.52435 18.3346H13.4827C13.8243 18.3346 14.1077 18.0513 14.1077 17.7096C14.1077 17.368 13.8243 17.0846 13.4827 17.0846H11.466C11.0077 17.0846 10.6327 16.7096 10.6327 16.2513V15.443C10.6327 14.9846 11.0077 14.6096 11.466 14.6096H14.641C16.6743 14.6096 18.316 12.9596 18.316 10.9346V10.768V5.3513C18.3077 3.31797 16.6577 1.66797 14.6327 1.66797Z"
+              fill="#6B7080"
+            />
+          </svg>
+          <span>Desktop</span>
+        </h2>
+        <ul className="p-3 space-y-3 text-sm font-semibold text-gray-600 border-b">
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>4k</span>
+              <span>3840x 2160</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Full HD</span>
+              <span>1920 x 1080</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Surface Book</span>
+              <span>1500 x 1000</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Mackbook Air</span>
+              <span>1280 x 832</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Macbook Pro 14"</span>
+              <span>1512 x 982</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Macbook Pro 16"</span>
+              <span>1728 x 1117</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Laptop S</span>
+              <span>1024 x 768</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Laptop M</span>
+              <span>1366 x 768</span>
+            </button>
+          </li>
+        </ul>
+        <h2 className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-500">
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_3608_7)">
+              <path
+                d="M17.0254 0.726562H3.27539C2.24023 0.726562 1.40039 1.56641 1.40039 2.60156V18.8516C1.40039 19.8867 2.24023 20.7266 3.27539 20.7266H17.0254C18.0605 20.7266 18.9004 19.8867 18.9004 18.8516V2.60156C18.9004 1.56641 18.0605 0.726562 17.0254 0.726562ZM10.1504 19.4766C9.45898 19.4766 8.90039 18.918 8.90039 18.2266C8.90039 17.5352 9.45898 16.9766 10.1504 16.9766C10.8418 16.9766 11.4004 17.5352 11.4004 18.2266C11.4004 18.918 10.8418 19.4766 10.1504 19.4766Z"
+                fill="#6B7280"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_3608_7">
+                <rect
+                  width="20"
+                  height="20"
+                  fill="white"
+                  transform="translate(0.150391 0.726562)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <span>Tablet</span>
+        </h2>
+        <ul className="p-3 space-y-3 text-sm font-semibold text-gray-600 border-b">
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPad Pro 12.9"</span>
+              <span>1024 x 1366</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPad Pro 11"</span>
+              <span>834 x 1194</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPad mini</span>
+              <span>768 x 1024</span>
+            </button>
+          </li>
+        </ul>
+        <h2 className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-500">
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_3608_7)">
+              <path
+                d="M17.0254 0.726562H3.27539C2.24023 0.726562 1.40039 1.56641 1.40039 2.60156V18.8516C1.40039 19.8867 2.24023 20.7266 3.27539 20.7266H17.0254C18.0605 20.7266 18.9004 19.8867 18.9004 18.8516V2.60156C18.9004 1.56641 18.0605 0.726562 17.0254 0.726562ZM10.1504 19.4766C9.45898 19.4766 8.90039 18.918 8.90039 18.2266C8.90039 17.5352 9.45898 16.9766 10.1504 16.9766C10.8418 16.9766 11.4004 17.5352 11.4004 18.2266C11.4004 18.918 10.8418 19.4766 10.1504 19.4766Z"
+                fill="#6B7280"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_3608_7">
+                <rect
+                  width="20"
+                  height="20"
+                  fill="white"
+                  transform="translate(0.150391 0.726562)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <span>Tablet</span>
+        </h2>
+        <ul className="p-3 space-y-3 text-sm font-semibold text-gray-600 border-b">
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone 14 & 15 Pro Max</span>
+              <span>430 x 932</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone 14 & 15 Pro</span>
+              <span>393 x 852</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone 13 & 14</span>
+              <span>390 x 844</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone 14 Plus</span>
+              <span>428 x 926</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone 13 mini</span>
+              <span>375 x 812</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone SE</span>
+              <span>320 x 568</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone 8 Plus</span>
+              <span>414 x 736</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>iPhone 8</span>
+              <span>375 x 667</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Google Pixel 2 XL</span>
+              <span>411 x 823</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Google Pixel 2</span>
+              <span>411 x 731</span>
+            </button>
+          </li>
+          <li>
+            <button className="flex items-center justify-between w-full">
+              <span>Android</span>
+              <span>360 x 640</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      ):<></>
+     }
+      <button
+        onClick={toggleOffcanvas1}
+        className="fixed z-20 flex items-center justify-center bg-white rounded-full shadow-xl size-14 left-5 bottom-5"
+      >
+        {isOffcanvas1Open ? (
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.5463 6.63604L12.7279 10.4544L8.90955 6.63604C8.21375 5.94025 7.05975 5.94025 6.36396 6.63604C5.66817 7.33183 5.66817 8.48583 6.36396 9.18162L10.1823 13L6.36396 16.8184C5.66817 17.5142 5.66817 18.6682 6.36396 19.364C7.05975 20.0598 8.21375 20.0598 8.90955 19.364L12.7279 15.5456L16.5463 19.364C17.2421 20.0598 18.3961 20.0598 19.0919 19.364C19.7877 18.6682 19.7877 17.5142 19.0919 16.8184L15.2735 13L19.0919 9.18162C19.7877 8.48583 19.7877 7.33183 19.0919 6.63604C18.3961 5.94025 17.2421 5.94025 16.5463 6.63604Z"
+              fill="#292D32"
+            />
+          </svg>
+        ) : (
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.4704 16.83L18.8604 19.99C18.9604 20.82 18.0704 21.4 17.3604 20.97L13.9004 18.91C13.6604 18.77 13.6004 18.47 13.7304 18.23C14.2304 17.31 14.5004 16.27 14.5004 15.23C14.5004 11.57 11.3604 8.59 7.50038 8.59C6.71038 8.59 5.94038 8.71 5.22038 8.95C4.85038 9.07 4.49038 8.73 4.58038 8.35C5.49038 4.71 8.99038 2 13.1704 2C18.0504 2 22.0004 5.69 22.0004 10.24C22.0004 12.94 20.6104 15.33 18.4704 16.83Z"
+              fill="#292D32"
+            />
+            <path
+              d="M13 15.2298C13 16.4198 12.56 17.5198 11.82 18.3898C10.83 19.5898 9.26 20.3598 7.5 20.3598L4.89 21.9098C4.45 22.1798 3.89 21.8098 3.95 21.2998L4.2 19.3298C2.86 18.3998 2 16.9098 2 15.2298C2 13.4698 2.94 11.9198 4.38 10.9998C5.27 10.4198 6.34 10.0898 7.5 10.0898C10.54 10.0898 13 12.3898 13 15.2298Z"
+              fill="#292D32"
+            />
+          </svg>
+        )}
       </button>
       <button className="fixed z-20 flex items-center justify-center bg-white rounded-full shadow-xl size-12 left-28 bottom-5">
         <svg
@@ -81,22 +373,37 @@ export default function Heroiu() {
         onClick={toggleOffcanvas2}
         className="fixed z-20 flex items-center justify-center bg-white rounded-full shadow-xl size-14 right-5 bottom-5"
       >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M22 4.84969V16.7397C22 17.7097 21.21 18.5997 20.24 18.7197L19.93 18.7597C18.29 18.9797 15.98 19.6597 14.12 20.4397C13.47 20.7097 12.75 20.2197 12.75 19.5097V5.59969C12.75 5.22969 12.96 4.88969 13.29 4.70969C15.12 3.71969 17.89 2.83969 19.77 2.67969H19.83C21.03 2.67969 22 3.64969 22 4.84969Z"
-            fill="#292D32"
-          />
-          <path
-            d="M10.7083 4.70969C8.87828 3.71969 6.10828 2.83969 4.22828 2.67969H4.15828C2.95828 2.67969 1.98828 3.64969 1.98828 4.84969V16.7397C1.98828 17.7097 2.77828 18.5997 3.74828 18.7197L4.05828 18.7597C5.69828 18.9797 8.00828 19.6597 9.86828 20.4397C10.5183 20.7097 11.2383 20.2197 11.2383 19.5097V5.59969C11.2383 5.21969 11.0383 4.88969 10.7083 4.70969ZM4.99828 7.73969H7.24828C7.65828 7.73969 7.99828 8.07969 7.99828 8.48969C7.99828 8.90969 7.65828 9.23969 7.24828 9.23969H4.99828C4.58828 9.23969 4.24828 8.90969 4.24828 8.48969C4.24828 8.07969 4.58828 7.73969 4.99828 7.73969ZM7.99828 12.2397H4.99828C4.58828 12.2397 4.24828 11.9097 4.24828 11.4897C4.24828 11.0797 4.58828 10.7397 4.99828 10.7397H7.99828C8.40828 10.7397 8.74828 11.0797 8.74828 11.4897C8.74828 11.9097 8.40828 12.2397 7.99828 12.2397Z"
-            fill="#292D32"
-          />
-        </svg>
+        {isOffcanvas2Open ? (
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.5463 6.63604L12.7279 10.4544L8.90955 6.63604C8.21375 5.94025 7.05975 5.94025 6.36396 6.63604C5.66817 7.33183 5.66817 8.48583 6.36396 9.18162L10.1823 13L6.36396 16.8184C5.66817 17.5142 5.66817 18.6682 6.36396 19.364C7.05975 20.0598 8.21375 20.0598 8.90955 19.364L12.7279 15.5456L16.5463 19.364C17.2421 20.0598 18.3961 20.0598 19.0919 19.364C19.7877 18.6682 19.7877 17.5142 19.0919 16.8184L15.2735 13L19.0919 9.18162C19.7877 8.48583 19.7877 7.33183 19.0919 6.63604C18.3961 5.94025 17.2421 5.94025 16.5463 6.63604Z"
+              fill="#292D32"
+            />
+          </svg>
+        ) : (
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 4.84969V16.7397C22 17.7097 21.21 18.5997 20.24 18.7197L19.93 18.7597C18.29 18.9797 15.98 19.6597 14.12 20.4397C13.47 20.7097 12.75 20.2197 12.75 19.5097V5.59969C12.75 5.22969 12.96 4.88969 13.29 4.70969C15.12 3.71969 17.89 2.83969 19.77 2.67969H19.83C21.03 2.67969 22 3.64969 22 4.84969Z"
+              fill="#292D32"
+            />
+            <path
+              d="M10.7083 4.70969C8.87828 3.71969 6.10828 2.83969 4.22828 2.67969H4.15828C2.95828 2.67969 1.98828 3.64969 1.98828 4.84969V16.7397C1.98828 17.7097 2.77828 18.5997 3.74828 18.7197L4.05828 18.7597C5.69828 18.9797 8.00828 19.6597 9.86828 20.4397C10.5183 20.7097 11.2383 20.2197 11.2383 19.5097V5.59969C11.2383 5.21969 11.0383 4.88969 10.7083 4.70969ZM4.99828 7.73969H7.24828C7.65828 7.73969 7.99828 8.07969 7.99828 8.48969C7.99828 8.90969 7.65828 9.23969 7.24828 9.23969H4.99828C4.58828 9.23969 4.24828 8.90969 4.24828 8.48969C4.24828 8.07969 4.58828 7.73969 4.99828 7.73969ZM7.99828 12.2397H4.99828C4.58828 12.2397 4.24828 11.9097 4.24828 11.4897C4.24828 11.0797 4.58828 10.7397 4.99828 10.7397H7.99828C8.40828 10.7397 8.74828 11.0797 8.74828 11.4897C8.74828 11.9097 8.40828 12.2397 7.99828 12.2397Z"
+              fill="#292D32"
+            />
+          </svg>
+        )}
       </button>
       <div
         className={`fixed left-0 right-0 flex items-center justify-center w-16 h-8 mx-auto rounded-full shadow-xl bottom-5 ${
@@ -989,7 +1296,218 @@ export default function Heroiu() {
         )}
       </Offcanvas>
       <Offcanvas isOpen={isOffcanvas2Open} isLeft={true}>
-        <p>This is the content of Offcanvas 1.</p>
+        {mainTab2 === 1 && (
+          <>
+            <div>
+              <div className="flex items-center justify-between gap-2 p-3 border-b">
+                <div className="me-auto">
+                  <h2 className="font-semibold text-gray-700">Guidelines</h2>
+                </div>
+                <a
+                  href="#"
+                  className={`flex shrink-0 justify-center items-center  bg-sky-500 size-8 rounded-md`}
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.8 4.8H7.2V1.2C7.2 0.544 6.656 0 6 0C5.344 0 4.8 0.544 4.8 1.2V4.8H1.2C0.544 4.8 0 5.344 0 6C0 6.656 0.544 7.2 1.2 7.2H4.8V10.8C4.8 11.456 5.344 12 6 12C6.656 12 7.2 11.456 7.2 10.8V7.2H10.8C11.456 7.2 12 6.656 12 6C12 5.344 11.456 4.8 10.8 4.8Z"
+                      fill="#fff"
+                    />
+                  </svg>
+                </a>
+                <button
+                  onClick={() => {
+                    setSetting4(!setting4);
+                  }}
+                  className="relative flex items-center justify-center text-left size-5"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_3553_6)">
+                      <path
+                        d="M6.58203 4.70703C7.51484 4.70703 8.26953 5.46172 8.26953 6.39453C8.26953 7.32734 7.51484 8.08203 6.58203 8.08203C5.64922 8.08203 4.89453 7.32734 4.89453 6.39453C4.89453 5.46172 5.64922 4.70703 6.58203 4.70703ZM4.89453 2.26953C4.89453 3.20234 5.64922 3.95703 6.58203 3.95703C7.51484 3.95703 8.26953 3.20234 8.26953 2.26953C8.26953 1.33672 7.51484 0.582031 6.58203 0.582031C5.64922 0.582031 4.89453 1.33672 4.89453 2.26953ZM4.89453 10.5195C4.89453 11.4523 5.64922 12.207 6.58203 12.207C7.51484 12.207 8.26953 11.4523 8.26953 10.5195C8.26953 9.58672 7.51484 8.83203 6.58203 8.83203C5.64922 8.83203 4.89453 9.58672 4.89453 10.5195Z"
+                        fill="#B0B0B0"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_3553_6">
+                        <rect
+                          width="12"
+                          height="12"
+                          fill="white"
+                          transform="translate(0.582031 0.394531)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <ul
+                    className={`absolute bg-white border rounded-md top-full right-0 w-[200px] *:py-1.5 *:px-2 text-gray-600 text-sm font-semibold py-2 *:transition-all *:duration-500 ${
+                      setting4 ? `block` : `hidden`
+                    }`}
+                  >
+                    <li className="hover:bg-gray-200">
+                      <a href="#">Add custom Guideline</a>
+                    </li>
+                    <li className="hover:bg-gray-200">
+                      <a href="#">Change project guideline</a>
+                    </li>
+                    <li className="border-t hover:bg-gray-200">
+                      <a href="#">how to use guidelines?</a>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+              <div
+                className="p-3 border-b cursor-pointer hover:bg-gray-100"
+                onClick={() => {
+                  setMainTab2(2);
+                }}
+              >
+                <h3 className="text-sm font-semibold text-gray-900">
+                  Amélie Boucher's
+                </h3>
+                <p className="text-xs text-gray-600">
+                  {" "}
+                  The 12 Ergonomic Criteria{" "}
+                </p>
+              </div>
+              <div
+                className="p-3 border-b cursor-pointer hover:bg-gray-100"
+                onClick={() => {
+                  setMainTab2(2);
+                }}
+              >
+                <h3 className="text-sm font-semibold text-gray-900">
+                  Amélie Boucher's
+                </h3>
+                <p className="text-xs text-gray-600">
+                  {" "}
+                  The 12 Ergonomic Criteria{" "}
+                </p>
+              </div>
+            </div>
+          </>
+        )}
+        {mainTab2 === 2 && (
+          <>
+            <div>
+              <div className="px-3">
+                <p
+                  onClick={() => {
+                    setMainTab2(1);
+                  }}
+                  className="flex items-center gap-2 pt-3 text-xs font-bold cursor-pointer text-zinc-700"
+                >
+                  <svg
+                    width="6"
+                    height="10"
+                    viewBox="0 0 6 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 9.02273L1 5.01136L5 1"
+                      stroke="#292D32"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span>GUIDELINES</span>
+                </p>
+              </div>
+              <div className="flex justify-between p-3 border-b">
+                <p className="text-sm font-semibold text-gray-700">
+                  Amélie Boucher's
+                </p>
+                <button
+                  onClick={() => {
+                    setSetting4(!setting4);
+                  }}
+                  className="relative flex items-center justify-center text-left size-5"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_3553_6)">
+                      <path
+                        d="M6.58203 4.70703C7.51484 4.70703 8.26953 5.46172 8.26953 6.39453C8.26953 7.32734 7.51484 8.08203 6.58203 8.08203C5.64922 8.08203 4.89453 7.32734 4.89453 6.39453C4.89453 5.46172 5.64922 4.70703 6.58203 4.70703ZM4.89453 2.26953C4.89453 3.20234 5.64922 3.95703 6.58203 3.95703C7.51484 3.95703 8.26953 3.20234 8.26953 2.26953C8.26953 1.33672 7.51484 0.582031 6.58203 0.582031C5.64922 0.582031 4.89453 1.33672 4.89453 2.26953ZM4.89453 10.5195C4.89453 11.4523 5.64922 12.207 6.58203 12.207C7.51484 12.207 8.26953 11.4523 8.26953 10.5195C8.26953 9.58672 7.51484 8.83203 6.58203 8.83203C5.64922 8.83203 4.89453 9.58672 4.89453 10.5195Z"
+                        fill="#B0B0B0"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_3553_6">
+                        <rect
+                          width="12"
+                          height="12"
+                          fill="white"
+                          transform="translate(0.582031 0.394531)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <ul
+                    className={`absolute bg-white border rounded-md top-full right-0 w-[200px] *:py-1.5 *:px-2 text-gray-600 text-sm font-semibold py-2 *:transition-all *:duration-500 ${
+                      setting4 ? `block` : `hidden`
+                    }`}
+                  >
+                    <li className="hover:bg-gray-200">
+                      <a href="#">Set as global guideline</a>
+                    </li>
+                    <li className="hover:bg-gray-200">
+                      <a href="#">Learn more</a>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+              <div
+                className="relative p-3 border-b cursor-pointer hover:bg-gray-100 group"
+                onClick={() => {
+                  setMainTab2(2);
+                }}
+              >
+                <h3 className="text-sm font-semibold text-gray-900">
+                  1. Architecture
+                </h3>
+                <p className="text-xs text-gray-600">
+                  {" "}
+                  The site is well organized.{" "}
+                </p>
+                <svg
+                  className="absolute opacity-0 right-2 top-2 group-hover:opacity-100"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.0025 8.67688C6.45261 8.67688 6.8175 8.31199 6.8175 7.86188C6.8175 7.41176 6.45261 7.04688 6.0025 7.04688C5.55239 7.04688 5.1875 7.41176 5.1875 7.86188C5.1875 8.31199 5.55239 8.67688 6.0025 8.67688Z"
+                    fill="#0EA5E9"
+                  />
+                  <path
+                    d="M8.325 4.72H3.675C3.635 4.72 3.6 4.72 3.56 4.72V4.14C3.56 2.675 3.975 1.7 6 1.7C8.165 1.7 8.44 2.755 8.44 3.675C8.44 3.87 8.595 4.025 8.79 4.025C8.985 4.025 9.14 3.87 9.14 3.675C9.14 1.9 8.085 1 6 1C3.185 1 2.86 2.79 2.86 4.14V4.765C1.46 4.94 1 5.65 1 7.395V8.325C1 10.375 1.625 11 3.675 11H8.325C10.375 11 11 10.375 11 8.325V7.395C11 5.345 10.375 4.72 8.325 4.72ZM6 9.37C5.165 9.37 4.49 8.69 4.49 7.86C4.49 7.025 5.17 6.35 6 6.35C6.83 6.35 7.51 7.03 7.51 7.86C7.51 8.695 6.835 9.37 6 9.37Z"
+                    fill="#0EA5E9"
+                  />
+                </svg>
+              </div>
+            </div>
+          </>
+        )}
       </Offcanvas>
     </div>
   );
