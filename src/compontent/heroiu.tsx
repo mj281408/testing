@@ -14,6 +14,7 @@ export default function Heroiu() {
   const [mainTab2, setMainTab2] = useState(1);
   const [tab, setTab] = useState(1);
   const [tab2, setTab2] = useState(1);
+  const [task, setTask] = useState(1);
 
   const toggleCheckbox = () => {
     setIsChecked(!isChecked);
@@ -23,8 +24,55 @@ export default function Heroiu() {
 
   const toggleOffcanvas1 = () => setIsOffcanvas1Open(!isOffcanvas1Open);
   const toggleOffcanvas2 = () => setIsOffcanvas2Open(!isOffcanvas2Open);
+  const  targetTask= ()=>{
+    setIsOffcanvas1Open(true);
+    setMainTab(3)
+  }
   return (
     <div>
+      <button onClick={targetTask} className="flex items-center justify-center font-semibold text-white border-2 border-white rounded-full shadow-lg bg-sky-500 size-8">1</button>
+      <div className="bg-white border rounded-xl w-[400px]">
+        <ul className="flex justify-center pt-3 text-sm font-semibold border-b">
+          <li>
+            <button onClick={()=>{setTask(1)}} className={`w-full px-6 pb-2 border-b-2 ${task === 1?'border-sky-500 text-sky-500':'text-gray-500 border-transparent'}`}>Note</button>
+          </li>
+          <li>
+            <button onClick={()=>{setTask(2)}} className={`w-full px-6 pb-2 border-b-2 ${task === 2?'border-sky-500 text-sky-500':'text-gray-500 border-transparent'}`}>Suggestion</button>
+          </li>
+          <li>
+            <button onClick={()=>{setTask(3)}} className={`w-full px-6 pb-2 border-b-2 ${task === 3?'border-sky-500 text-sky-500':'text-gray-500 border-transparent'}`}>Guidline</button>
+          </li>
+        </ul>
+        <div className="p-4">
+         {
+          task === 1 &&(
+            <textarea className="w-full h-24 font-semibold text-gray-500 outline-none" placeholder="Add a comment , use @ to mention...."></textarea>
+          )
+         }
+         {
+          task === 2 &&(
+            <textarea className="w-full h-24 font-semibold text-gray-500 outline-none" placeholder="Add a Suggestion , use @ to mention...."></textarea>
+          )
+         }
+         {
+          task === 3 &&(
+            <select className="w-full px-4 py-2 text-sm font-semibold text-gray-500 border rounded-md outline-none" name="" id="">
+              <option value="">option 1</option>
+              <option value="">option 1</option>
+              <option value="">option 1</option>
+              <option value="">option 1</option>
+              <option value="">option 1</option>
+              <option value="">option 1</option>
+              <option value="">option 1</option>
+            </select>
+          )
+         }
+        <div className="flex w-full gap-2 *:rounded-md *:border *:py-2 *:px-9 font-semibold text-sm mt-4">
+          <button className="text-gray-600 border-gray-300 hover:bg-sky-50 hover:text-sky-500 hover:border-sky-500">Cancel</button>
+          <button className="w-full text-white bg-sky-500 border-sky-500 hover:bg-sky-600">Submit</button>
+        </div>
+        </div>
+      </div>  
       <button onClick={()=>{setScreen(!screen)}} className="fixed flex items-center justify-center gap-1 px-4 py-2 text-sm font-bold text-gray-600 bg-white rounded-full shadow-lg right-2 top-2">
         <span>1920 x 919</span>
         <svg
@@ -201,31 +249,10 @@ export default function Heroiu() {
           </li>
         </ul>
         <h2 className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-500">
-          <svg
-            width="21"
-            height="21"
-            viewBox="0 0 21 21"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_3608_7)">
-              <path
-                d="M17.0254 0.726562H3.27539C2.24023 0.726562 1.40039 1.56641 1.40039 2.60156V18.8516C1.40039 19.8867 2.24023 20.7266 3.27539 20.7266H17.0254C18.0605 20.7266 18.9004 19.8867 18.9004 18.8516V2.60156C18.9004 1.56641 18.0605 0.726562 17.0254 0.726562ZM10.1504 19.4766C9.45898 19.4766 8.90039 18.918 8.90039 18.2266C8.90039 17.5352 9.45898 16.9766 10.1504 16.9766C10.8418 16.9766 11.4004 17.5352 11.4004 18.2266C11.4004 18.918 10.8418 19.4766 10.1504 19.4766Z"
-                fill="#6B7280"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_3608_7">
-                <rect
-                  width="20"
-                  height="20"
-                  fill="white"
-                  transform="translate(0.150391 0.726562)"
-                />
-              </clipPath>
-            </defs>
-          </svg>
-          <span>Tablet</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.534 1.66797H6.46732C4.16732 1.66797 3.33398 2.5013 3.33398 4.84297V15.1596C3.33398 17.5013 4.16732 18.3346 6.46732 18.3346H13.5257C15.834 18.3346 16.6673 17.5013 16.6673 15.1596V4.84297C16.6673 2.5013 15.834 1.66797 13.534 1.66797ZM10.0007 16.0846C9.20065 16.0846 8.54232 15.4263 8.54232 14.6263C8.54232 13.8263 9.20065 13.168 10.0007 13.168C10.8007 13.168 11.459 13.8263 11.459 14.6263C11.459 15.4263 10.8007 16.0846 10.0007 16.0846ZM11.6673 5.20964H8.33398C7.99232 5.20964 7.70898 4.9263 7.70898 4.58464C7.70898 4.24297 7.99232 3.95964 8.33398 3.95964H11.6673C12.009 3.95964 12.2923 4.24297 12.2923 4.58464C12.2923 4.9263 12.009 5.20964 11.6673 5.20964Z" fill="#6B7280"/>
+</svg>
+          <span>Mobile</span>
         </h2>
         <ul className="p-3 space-y-3 text-sm font-semibold text-gray-600 border-b">
           <li>
