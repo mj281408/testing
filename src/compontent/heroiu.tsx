@@ -58,12 +58,12 @@ export default function Heroiu() {
           task === 3 &&(
             <select className="w-full px-4 py-2 text-sm font-semibold text-gray-500 border rounded-md outline-none" name="" id="">
               <option value="">option 1</option>
-              <option value="">option 1</option>
-              <option value="">option 1</option>
-              <option value="">option 1</option>
-              <option value="">option 1</option>
-              <option value="">option 1</option>
-              <option value="">option 1</option>
+              <option value="">option 2</option>
+              <option value="">option 3</option>
+              <option value="">option 4</option>
+              <option value="">option 5</option>
+              <option value="">option 6</option>
+              <option value="">option 7</option>
             </select>
           )
          }
