@@ -1,8 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./css/fonts.css";
+import HeaderBlue from "./blueberry/common/header";
+import FooterBlue from "./blueberry/common/footer";
 import Header from "./common/header";
-import Footer from "./common/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,9 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`font ${inter.className}`}>
+        {/* <HeaderBlue />
+        {children}
+        <FooterBlue /> */}
         <Header />
         {children}
-        <Footer/>
+        {/* <Footer /> */}
       </body>
     </html>
   );

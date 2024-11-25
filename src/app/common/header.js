@@ -1,181 +1,69 @@
-'use client'
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import Image from 'next/image'
+
 
 export default function Header() {
-    const [selectedOption, setSelectedOption] = useState('Vegetables');
-    const [isOpen, setIsOpen] = useState(false);
-    const [height, setHeight] = useState('0px');
-    const contentRef = useRef(null);
-    const options = ['Vegetables', 'Cold Drinks', 'Fruits', 'Bakery'];
-
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
-
-    const handleOptionClick = (option) => {
-        setSelectedOption(option);
-        setIsOpen(false);
-    };
-
-    useEffect(() => {
-        if (isOpen) {
-            setHeight(`${contentRef.current.scrollHeight}px`);
-        } else {
-            setHeight('0px');
-        }
-    }, [isOpen]);
     return (
         <>
-            <header>
-                <div className="py-2 font-medium text-white bg-secondary dark:bg-dark-secondary">
-                    <div className="container">
-                        <div className="flex justify-between">
-                            <p>Flat 50% Off On Grocery Shop.</p>
-                            <ul className="flex items-center gap-5">
-                                <li>
-                                    <Link href="/">Help?</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Track Order</Link>
-                                </li>
-                                <li className="relative group">
-                                    <Link href="/" className="flex items-center gap-1"><span>Language</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            <header className="bg-white">
+                <div className="container">
+                    <div className="flex items-center justify-between">
+                        <Link href={`/`}>
+                            <Image
+                                width={70}
+                                height={70}
+                                objectFit="cover"
+                                src={`/images/f-logo.png`}
+                                alt=""
+                            />
+                        </Link>
+                        <ul className="flex gap-10 font-semibold">
+                            <li>
+                                <Link href={`/`}>Home</Link>
+                            </li>
+                            <li>
+                                <Link href={`/`}>Shop</Link>
+                            </li>
+                            <li>
+                                <Link href={`/`}>About</Link>
+                            </li>
+                            <li>
+                                <Link href={`/`}>Contact</Link>
+                            </li>
+                        </ul>
+                        <ul className="flex items-center gap-8">
+                            <li>
+                                <Link href={`/login`}>
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M23.3334 14V8.16666H25.6667V15.1667H23.3334M23.3334 19.8333H25.6667V17.5H23.3334M11.6667 15.1667C14.7817 15.1667 21 16.73 21 19.8333V23.3333H2.33337V19.8333C2.33337 16.73 8.55171 15.1667 11.6667 15.1667ZM11.6667 4.66666C12.9044 4.66666 14.0914 5.15832 14.9665 6.03349C15.8417 6.90866 16.3334 8.09565 16.3334 9.33332C16.3334 10.571 15.8417 11.758 14.9665 12.6332C14.0914 13.5083 12.9044 14 11.6667 14C10.429 14 9.24205 13.5083 8.36688 12.6332C7.49171 11.758 7.00004 10.571 7.00004 9.33332C7.00004 8.09565 7.49171 6.90866 8.36688 6.03349C9.24205 5.15832 10.429 4.66666 11.6667 4.66666ZM11.6667 17.3833C8.20171 17.3833 4.55004 19.0867 4.55004 19.8333V21.1167H18.7834V19.8333C18.7834 19.0867 15.1317 17.3833 11.6667 17.3833ZM11.6667 6.88332C11.0169 6.88332 10.3938 7.14145 9.9343 7.60091C9.47483 8.06038 9.21671 8.68354 9.21671 9.33332C9.21671 9.9831 9.47483 10.6063 9.9343 11.0657C10.3938 11.5252 11.0169 11.7833 11.6667 11.7833C12.3165 11.7833 12.9397 11.5252 13.3991 11.0657C13.8586 10.6063 14.1167 9.9831 14.1167 9.33332C14.1167 8.68354 13.8586 8.06038 13.3991 7.60091C12.9397 7.14145 12.3165 6.88332 11.6667 6.88332Z" fill="black" />
                                     </svg>
-                                    </Link>
-                                    <ol className="absolute font-normal bg-white text-secondary w-[120px] p-2 rounded-md border shadow-md text-sm translate-y-5 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-500">
-                                        <li>
-                                            <Link href="/">Engslih</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/">Hindi</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/">Gujarti</Link>
-                                        </li>
-                                    </ol>
-                                </li>
-                                <li className="relative group">
-                                    <Link href="/" className="flex items-center gap-1"><span>Currency</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href={`/shop`}>
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24.5 24.5L19.2664 19.257M22.1667 12.25C22.1667 14.8801 21.1219 17.4024 19.2622 19.2622C17.4024 21.1219 14.8801 22.1667 12.25 22.1667C9.61998 22.1667 7.09763 21.1219 5.2379 19.2622C3.37816 17.4024 2.33337 14.8801 2.33337 12.25C2.33337 9.61995 3.37816 7.0976 5.2379 5.23787C7.09763 3.37813 9.61998 2.33334 12.25 2.33334C14.8801 2.33334 17.4024 3.37813 19.2622 5.23787C21.1219 7.0976 22.1667 9.61995 22.1667 12.25V12.25Z" stroke="black" stroke-width="2" stroke-linecap="round" />
                                     </svg>
-                                    </Link>
-                                    <ol className="absolute font-normal bg-white text-secondary w-[120px] p-2 rounded-md border shadow-md text-sm translate-y-5 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-500">
-                                        <li>
-                                            <Link href="/">USD</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/">EUR</Link>
-                                        </li>
-                                    </ol>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="py-4">
-                    <div className="container">
-                        <div className="flex items-stretch justify-between">
-                            <Link href={"/"}>
-                                <Image
-                                    width={125}
-                                    height={43}
-                                    objectFit="cover"
-                                    src={`/images/logo.png`}
-                                    alt=""
-                                />
-                            </Link>
-                            <div className="flex h-[45px] relative">
-                                <div className="relative inline-block h-full text-left">
-                                    <button
-                                        className="flex h-full items-center justify-between w-[140px] px-4  font-medium border rounded-s-md border-border dark:border-border-dark text-decripation dark:text-dark-text"
-                                        onClick={toggleDropdown}
-                                    >
-                                        {selectedOption}
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className={`h-4 w-4 transform transition-transform stroke-decripation dark:stroke-dark-text duration-300 ${isOpen ? 'rotate-180' : ''
-                                                }`}
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M19 9l-7 7-7-7"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <div
-                                        ref={contentRef}
-                                        style={{ height: height }}
-                                        className="absolute w-full overflow-hidden transition-all duration-300"
-                                    >
-                                        <ul className="z-10 mt-2 font-medium bg-white border border-gray-200 rounded-md shadow-lg text-decripation dark:text-dark-text">
-                                            {options.map((option) => (
-                                                <li key={option} className="px-4 py-2">
-                                                    <label className="flex items-center cursor-pointer hover:text-primary">
-                                                        <input
-                                                            type="radio"
-                                                            name="dropdown"
-                                                            value={option}
-                                                            checked={selectedOption === option}
-                                                            onChange={() => handleOptionClick(option)}
-                                                            className="hidden mr-2"
-                                                        />
-                                                        {option}
-                                                    </label>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                                <input type="search" className="h-full px-4 border w-[450px] border-s-0 border-border dark:border-border-dark rounded-e-md" placeholder="Search product..." />
-                                <svg width="18" className="stroke-[#555] dark:stroke-border-dark absolute top-3 right-4" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M22 22L20 20" stroke="inherit" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="px-2 py-1 bg-white border md:px-0 border-border dark:border-border-dark dark:bg-dark-secondary">
-                    <div className="container">
-                        <div className="flex items-center gap-8">
-                            <Link href={"/"} className="border bg-white dark:bg-dark-primary rounded-md border-border dark:border-border-dark w-[45px] h-[45px] flex justify-center items-center">
-                                <svg class="svg-icon w-[25px] h-[25px]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="fill-[#6c7fd8]" d="M384 928H192a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 608a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V640a32 32 0 0 0-32-32H192zM784 928H640a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v144a32 32 0 0 1-64 0V640a32 32 0 0 0-32-32H640a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h144a32 32 0 0 1 0 64zM384 480H192a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H192zM832 480H640a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM640 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H640z"></path>
-                                </svg>
-                            </Link>
-                            <ul className="flex gap-8 font-semibold text-secondary dark:text-dark-secondary">
-                                <li>
-                                    <Link href="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Categories</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Products</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Pages</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Blog</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Offers</Link>
-                                </li>
-                            </ul>
-                        </div>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href={`/login`}>
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.16671 3.5C4.94554 3.5 2.33337 6.08533 2.33337 9.275C2.33337 11.8498 3.35421 17.9608 13.4027 24.1383C13.5827 24.2479 13.7893 24.3058 14 24.3058C14.2107 24.3058 14.4174 24.2479 14.5974 24.1383C24.6459 17.9608 25.6667 11.8498 25.6667 9.275C25.6667 6.08533 23.0545 3.5 19.8334 3.5C16.6122 3.5 14 7 14 7C14 7 11.3879 3.5 8.16671 3.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href={`/login`}>
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M25.2354 19.1926H8.95225L9.76982 17.5273L23.3542 17.5027C23.8136 17.5027 24.2073 17.1746 24.2894 16.7207L26.1706 6.19062C26.2198 5.91445 26.146 5.63008 25.9655 5.41406C25.8763 5.30775 25.7651 5.22211 25.6395 5.16309C25.5139 5.10407 25.377 5.07308 25.2382 5.07227L7.95693 5.01484L7.80928 4.32031C7.71631 3.87734 7.31709 3.55469 6.86318 3.55469H2.63857C2.38258 3.55469 2.13707 3.65638 1.95605 3.8374C1.77503 4.01841 1.67334 4.26393 1.67334 4.51992C1.67334 4.77592 1.77503 5.02143 1.95605 5.20245C2.13707 5.38346 2.38258 5.48516 2.63857 5.48516H6.08115L6.72646 8.55312L8.31514 16.2449L6.26982 19.5836C6.16361 19.727 6.09963 19.8972 6.08514 20.075C6.07064 20.2528 6.1062 20.4312 6.18779 20.5898C6.35186 20.9152 6.68271 21.1203 7.04912 21.1203H8.76631C8.40023 21.6065 8.20249 22.1988 8.20303 22.8074C8.20303 24.3551 9.46084 25.6129 11.0085 25.6129C12.5562 25.6129 13.814 24.3551 13.814 22.8074C13.814 22.1977 13.6116 21.6043 13.2507 21.1203H17.6558C17.2897 21.6065 17.0919 22.1988 17.0925 22.8074C17.0925 24.3551 18.3503 25.6129 19.8979 25.6129C21.4456 25.6129 22.7034 24.3551 22.7034 22.8074C22.7034 22.1977 22.5011 21.6043 22.1401 21.1203H25.2382C25.7687 21.1203 26.2034 20.6883 26.2034 20.1551C26.2018 19.8994 26.0992 19.6546 25.9178 19.4743C25.7365 19.294 25.4912 19.1927 25.2354 19.1926ZM8.35889 6.91797L24.1034 6.96992L22.5612 15.6051L10.1937 15.627L8.35889 6.91797ZM11.0085 23.6715C10.5327 23.6715 10.1444 23.2832 10.1444 22.8074C10.1444 22.3316 10.5327 21.9434 11.0085 21.9434C11.4843 21.9434 11.8726 22.3316 11.8726 22.8074C11.8726 23.0366 11.7815 23.2564 11.6195 23.4184C11.4574 23.5805 11.2377 23.6715 11.0085 23.6715ZM19.8979 23.6715C19.4222 23.6715 19.0339 23.2832 19.0339 22.8074C19.0339 22.3316 19.4222 21.9434 19.8979 21.9434C20.3737 21.9434 20.762 22.3316 20.762 22.8074C20.762 23.0366 20.671 23.2564 20.5089 23.4184C20.3469 23.5805 20.1271 23.6715 19.8979 23.6715Z" fill="black" />
+                                    </svg>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </header>
-
         </>
-    )
+    );
 }
