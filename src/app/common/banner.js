@@ -7,7 +7,7 @@ export default function Banner() {
             <div className="container">
                 <div className="grid items-center grid-cols-2">
                     <div>
-                        <h2 className='text-7xl/normal'>Rocket single seater</h2>
+                        <h2 className='font-semibold text-7xl/normal'>Rocket single seater</h2>
                         <Link className='text-xl font-semibold underline underline-offset-8' href={`/shop`}>Shop Now</Link>
                     </div>
                     <div>
