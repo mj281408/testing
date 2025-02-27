@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { act, useState } from 'react';
 
 
-export default function Page() {
+export default function Blueberry() {
   const [activeTab, setActiveTab] = useState('store-1');
 
   const handleTabClick = (tab) => {

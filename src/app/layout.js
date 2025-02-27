@@ -16,12 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`font ${inter.className}`}>
-        {/* <HeaderBlue />
+        <HeaderBlue />
         {children}
-        <FooterBlue /> */}
-        <Header />
+        <FooterBlue />
+        {/* <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer /> */}
       </body>
     </html>
   );
